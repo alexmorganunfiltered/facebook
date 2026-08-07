@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-07 — Remove legacy Facebook redirect artifact
+
+**Change:** Deleted unused `azure-index.html` (client-side redirect to Facebook). Added short-lived cache-busting meta tags in layout so browsers drop stale redirect `index.html`. Live GitHub Pages already serves the landing page (verified HTTP 200, no redirect JS).
+
+**Files touched:** `azure-index.html` (removed), `includes/layout.php`.
+
+---
+
 ## 2026-08-07 — Multi-page editorial landing site for GitHub Pages
 
 **Change:** Built responsive static editorial site with five pages (Home, Articles, Policy Comparisons, Australia Explained, About). Reusable components in `includes/components.php` (header, footer, hero, article cards, policy cards, comparison table + mobile stacked cards, sources, My Thoughts, social links). White editorial design with navy/black/grey and limited red accents; Inter + Noto Sans Sinhala fonts. `policy-comparison.json` table data unchanged; sources in separate `policy-comparison-sources.json`. Static build generates all HTML pages (home no longer Facebook redirect).

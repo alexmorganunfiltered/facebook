@@ -23,6 +23,9 @@ function aswproject_render_page_start(array $page): void
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title><?= aswproject_escape($fullTitle) ?></title>
 <?php if ($description !== ''): ?>
   <meta name="description" content="<?= aswproject_escape($description) ?>">
