@@ -173,7 +173,7 @@ table.amd-table tbody tr:nth-child(even) td {
   background: var(--amd-table-row-alt);
 }
 
-table.amd-table tbody tr:hover td {
+table.amd-table tbody td:hover {
   background: var(--amd-table-row-hover);
 }
 
@@ -201,6 +201,10 @@ table.amd-table.amd-table--compare td:first-child {
 
 .amd-cell-block--spaced {
   margin-top: 0.85em;
+}
+
+table.amd-table tbody td .amd-cell-block--spaced {
+  color: var(--amd-accent);
 }
 
 table.amd-table td p.amd-cell-block {

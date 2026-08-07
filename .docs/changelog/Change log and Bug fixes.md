@@ -1,5 +1,43 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-07 — Table cell hover and English text colour
+
+**Change:** English blocks in table cells (`.amd-cell-block--spaced`) use dark blue (`--amd-accent`). Hover highlights single cell only, not entire row.
+
+**Files touched:** `assets/css/site.css`.
+
+---
+
+## 2026-08-07 — Reverted policy table party name wording
+
+**Change:** Restored Sinhala `ලේබර්` and `ලිබරල්–ජාතික සන්ධානය` in `content/policy-comparison.json` (undo of Labor/Liberal–National Coalition replacement in Sinhala text).
+
+**Files touched:** `content/policy-comparison.json`.
+
+---
+
+## 2026-08-07 — Policy table party name wording (reverted)
+
+## 2026-08-07 — GitHub Pages deploy 404 troubleshooting
+
+**Issue:** Actions build succeeded; deploy failed with 404 — Pages not enabled for GitHub Actions source.
+
+**Fix:** Settings → Pages → Source: **GitHub Actions**; Actions → General → Workflow permissions: **Read and write**; re-run workflow.
+
+**Files touched:** `.docs/github-pages.md`.
+
+---
+
+## 2026-08-07 — Isolated git repo and push_to_github.sh
+
+**Issue:** `git push` from `aswproject_dev/` still uploaded ~10k objects / ~500MB because git root was parent `custom/` monorepo, not this folder.
+
+**Fix:** Initialized `.git` inside `aswproject_dev/` only (~32 files). Added `push_to_github.sh` with git-root guard; token still from `/etc/webapp/config/.gitTokens` (`migrantsdiary=`).
+
+**Files touched:** `push_to_github.sh`, `.docs/github-pages.md`.
+
+---
+
 ## 2026-08-07 — GitHub Pages deploy for migrantsdiary/facebook
 
 **Change:** Added GitHub Actions workflow and `.scripts/build-static.php` to publish static site to https://migrantsdiary.github.io/facebook/ from repo https://github.com/migrantsdiary/facebook. Set `site_base_url` in `site-config.json`. Nav/canonical URLs switch between `.php` (local) and `.html` (Pages build).

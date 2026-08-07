@@ -67,7 +67,7 @@ OBJECTS="$(git rev-list --count HEAD 2>/dev/null || echo 0)"
 FILES="$(git ls-files | wc -l | tr -d ' ')"
 echo "Pushing aswproject_dev only ($FILES tracked files, $OBJECTS commits)..."
 
-git push "https://x-access-token:${TOKEN}@github.com/migrantsdiary/facebook.git" "HEAD:${BRANCH}" --force-with-lease
+git push "https://x-access-token:${TOKEN}@github.com/migrantsdiary/facebook.git" "HEAD:${BRANCH}" --force
 
 echo "Done. Site: https://migrantsdiary.github.io/facebook/"
 echo "Enable Pages: repo Settings → Pages → Source: GitHub Actions"

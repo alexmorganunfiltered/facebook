@@ -9,28 +9,48 @@ Public repo · no authentication · GitHub Actions builds static HTML on push to
 
 ## One-time GitHub setup
 
-1. Repo is already created: [migrantsdiary/facebook](https://github.com/migrantsdiary/facebook)
-2. Push this project to `main` (see below).
-3. GitHub → repo **Settings → Pages**:
-   - **Source:** GitHub Actions (not “Deploy from branch”)
-4. After the first workflow run succeeds, the site is live at the URL above.
+1. Repo: [migrantsdiary/facebook](https://github.com/migrantsdiary/facebook) — code on `main`.
+2. **Enable Pages (required — deploy fails with 404 until this is done):**
+   - **Settings → Pages**
+   - **Build and deployment → Source:** choose **GitHub Actions** (not “Deploy from a branch”)
+   - Save if prompted
+3. **Settings → Actions → General → Workflow permissions:**
+   - **Read and write permissions** (allows `GITHUB_TOKEN` to publish Pages)
+4. Re-run the failed workflow: **Actions → Deploy GitHub Pages → Re-run all jobs**
+
+Live URL after success: **https://migrantsdiary.github.io/facebook/**
+
+### If deploy still returns 404
+
+- Confirm step 2 says **GitHub Actions**, not a branch folder.
+- Org repo: **migrantsdiary** org settings may need **Pages** enabled for members.
+- PAT used for `git push` must include **`workflow`** scope (for pushing `.github/workflows/`).
 
 ---
 
 ## Push from staffservices dev server
 
+**Use the helper** — it refuses to run if git root is not `aswproject_dev/`:
+
 ```bash
 cd /var/www/html/staffservices/custom/aswproject_dev
-
-git init
-git remote add origin https://github.com/migrantsdiary/facebook.git
-git add .
-git commit -m "Initial site: policy comparison and GitHub Pages deploy"
-git branch -M main
-git push -u origin main
+./push_to_github.sh "your commit message"
 ```
 
-Use a personal access token or SSH if HTTPS push asks for credentials.
+Token: `/etc/webapp/config/.gitTokens` → `migrantsdiary=<PAT>`
+
+**Do not** run `git push` from `/var/www/html/staffservices/custom/` — that is the school monorepo (~500MB, thousands of files).
+
+One-time init (already done if `.git` exists inside `aswproject_dev/`):
+
+```bash
+cd /var/www/html/staffservices/custom/aswproject_dev
+git init
+git add .
+git commit -m "Initial site"
+git branch -M main
+./push_to_github.sh
+```
 
 ---
 
