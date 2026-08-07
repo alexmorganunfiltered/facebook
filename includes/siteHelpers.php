@@ -68,11 +68,12 @@ function aswproject_render_cell_text($value): void
         if ($part === '') {
             continue;
         }
+        $lang = $index === 0 ? 'si' : 'en';
+        $class = 'amd-cell-block';
         if ($index > 0) {
-            echo '<p class="amd-cell-block amd-cell-block--spaced">';
-        } else {
-            echo '<p class="amd-cell-block">';
+            $class .= ' amd-cell-block--spaced';
         }
+        echo '<p class="' . $class . '" lang="' . $lang . '">';
         echo aswproject_escape($part);
         echo '</p>';
     }

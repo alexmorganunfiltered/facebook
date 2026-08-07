@@ -17,6 +17,16 @@ function aswproject_nav_items(): array
     ];
 }
 
+function aswproject_render_lang_switcher(): void
+{
+    ?>
+    <div class="amd-lang-switch" role="group" aria-label="Language">
+      <button type="button" class="amd-lang-switch__btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      <button type="button" class="amd-lang-switch__btn" data-lang-switch="si" aria-pressed="false">සිං</button>
+    </div>
+<?php
+}
+
 function aswproject_render_site_header(string $currentPage = ''): void
 {
     $site = aswproject_load_site_config();
@@ -28,11 +38,14 @@ function aswproject_render_site_header(string $currentPage = ''): void
       <div class="amd-header__top">
         <div class="amd-header__brand-wrap">
           <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
-            <span class="amd-header__brand"><?= aswproject_escape($siteTitle) ?></span>
-            <span class="amd-header__subtitle"><?= aswproject_escape($siteSubtitle) ?></span>
+            <span class="amd-header__brand" lang="en"><?= aswproject_escape($siteTitle) ?></span>
+            <span class="amd-header__subtitle" lang="si"><?= aswproject_escape($siteSubtitle) ?></span>
           </a>
         </div>
-        <?php aswproject_render_social_links('amd-header__social'); ?>
+        <div class="amd-header__actions">
+          <?php aswproject_render_lang_switcher(); ?>
+          <?php aswproject_render_social_links('amd-header__social'); ?>
+        </div>
       </div>
       <nav class="amd-nav" aria-label="Main navigation">
         <ul class="amd-nav__list">
@@ -44,8 +57,8 @@ function aswproject_render_site_header(string $currentPage = ''): void
 ?>
           <li class="amd-nav__item">
             <a class="<?= aswproject_escape($classes) ?>" href="<?= aswproject_escape($href) ?>"<?= $isCurrent ? ' aria-current="page"' : '' ?>>
-              <span lang="en"><?= aswproject_escape($item['label']) ?></span>
-              <span class="amd-nav__link-si" lang="si"><?= aswproject_escape($item['label_si']) ?></span>
+              <span class="amd-nav__label" lang="en"><?= aswproject_escape($item['label']) ?></span>
+              <span class="amd-nav__label" lang="si"><?= aswproject_escape($item['label_si']) ?></span>
             </a>
           </li>
 <?php endforeach; ?>
@@ -64,7 +77,8 @@ function aswproject_render_site_footer(): void
     <footer class="amd-footer">
       <div class="amd-footer__inner">
         <?php aswproject_render_social_links('amd-footer__social'); ?>
-        <p class="amd-footer__copy">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteTitle) ?>. Independent editorial — not affiliated with any political party.</p>
+        <p class="amd-footer__copy" lang="en">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteTitle) ?>. Independent editorial — not affiliated with any political party.</p>
+        <p class="amd-footer__copy" lang="si">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteTitle) ?>. ස්වාධීන editorial — කිසිදු political party එකකට affiliated නොවේ.</p>
       </div>
     </footer>
 <?php
@@ -116,7 +130,10 @@ function aswproject_render_my_thoughts(array $data): void
     }
     ?>
     <aside class="amd-thoughts" aria-label="My thoughts">
-      <p class="amd-thoughts__label"><?= aswproject_escape($title) ?><?php if ($titleSi !== ''): ?> · <span lang="si"><?= aswproject_escape($titleSi) ?></span><?php endif; ?></p>
+      <p class="amd-thoughts__label" lang="en"><?= aswproject_escape($title) ?></p>
+<?php if ($titleSi !== ''): ?>
+      <p class="amd-thoughts__label" lang="si"><?= aswproject_escape($titleSi) ?></p>
+<?php endif; ?>
 <?php if ($body !== ''): ?>
       <p class="amd-thoughts__body" lang="en"><?= aswproject_escape($body) ?></p>
 <?php endif; ?>
@@ -130,14 +147,15 @@ function aswproject_render_my_thoughts(array $data): void
 /**
  * @param list<array<string, mixed>> $sources
  */
-function aswproject_render_source_list(array $sources, string $title = 'Sources and references'): void
+function aswproject_render_source_list(array $sources, string $title = 'Sources and references', string $titleSi = 'මූලාශ්‍ර'): void
 {
     if ($sources === []) {
         return;
     }
     ?>
     <section class="amd-sources">
-      <h2 class="amd-section-title"><?= aswproject_escape($title) ?></h2>
+      <h2 class="amd-section-title" lang="en"><?= aswproject_escape($title) ?></h2>
+      <h2 class="amd-section-title amd-section-title--si" lang="si"><?= aswproject_escape($titleSi) ?></h2>
       <ul class="amd-sources__list">
 <?php foreach ($sources as $source): ?>
 <?php
@@ -181,7 +199,8 @@ function aswproject_render_social_links(string $wrapperClass = 'amd-social'): vo
 function aswproject_render_article_cards(array $articles): void
 {
     if ($articles === []) {
-        echo '<p class="amd-empty">No articles yet.</p>';
+        echo '<p class="amd-empty" lang="en">No articles yet.</p>';
+        echo '<p class="amd-empty" lang="si">තවම ලිපi නැත.</p>';
         return;
     }
     ?>
@@ -206,7 +225,8 @@ function aswproject_render_article_cards(array $articles): void
 <?php if ($date !== ''): ?>
           <time datetime="<?= aswproject_escape($date) ?>"><?= aswproject_escape($date) ?></time>
 <?php elseif ($isSoon): ?>
-          <span class="amd-badge">Coming soon</span>
+          <span class="amd-badge" lang="en">Coming soon</span>
+          <span class="amd-badge" lang="si">ඉක්මනින්</span>
 <?php endif; ?>
         </div>
         <h2 class="amd-article-card__title" lang="en"><?= aswproject_escape($title) ?></h2>
@@ -220,7 +240,7 @@ function aswproject_render_article_cards(array $articles): void
         <p class="amd-article-card__excerpt amd-article-card__excerpt--si" lang="si"><?= aswproject_escape($excerptSi) ?></p>
 <?php endif; ?>
 <?php if (!$isSoon): ?>
-        <a class="amd-text-link" href="<?= aswproject_escape($href) ?>">Read more</a>
+        <a class="amd-text-link" href="<?= aswproject_escape($href) ?>"><span lang="en">Read more</span><span lang="si">තව කියවන්න</span></a>
 <?php endif; ?>
       </article>
 <?php endforeach; ?>
@@ -358,9 +378,11 @@ function aswproject_render_policy_comparison(array $content): void
     }
     ?>
     <section class="amd-card">
-      <h2 class="amd-card__title"><?= aswproject_escape($pageTitle) ?></h2>
+      <h2 class="amd-card__title" lang="en"><?= aswproject_escape($pageTitle) ?></h2>
+      <h2 class="amd-card__title amd-card__title--si" lang="si">වත්මන් ප්‍රතිපත්ති සංසන්ධනය</h2>
 <?php if ($intro !== ''): ?>
-      <p class="amd-card__intro"><?= aswproject_escape($intro) ?></p>
+      <p class="amd-card__intro" lang="en"><?= aswproject_escape($intro) ?></p>
+      <p class="amd-card__intro" lang="si">ප්‍රධාන පක්ෂවල සංක්‍රමණ ප්‍රතිපත්ති side-by-side සංසන්ධනය.</p>
 <?php endif; ?>
 <?php if ($columns === []): ?>
       <p class="amd-empty">No table columns configured.</p>

@@ -18,7 +18,7 @@ Standalone **public** personal site — **100% self-contained** in this director
 
 | Dev (PHP) | GitHub Pages (static) | Purpose |
 |-----------|------------------------|---------|
-| `index.php` | `index.html` | Home — editorial landing |
+| `index.php` | `index.html` | Redirect to Facebook |
 | `articles.php` | `articles.html` | Articles and explainers |
 | `policy-comparison.php` | `policy-comparison.html` | One Nation / Labor / Coalition comparison |
 | `australia-explained.php` | `australia-explained.html` | Systems newcomers ask about |

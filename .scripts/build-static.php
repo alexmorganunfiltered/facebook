@@ -118,16 +118,28 @@ build_static_copy_tree($root . '/content', $out . '/content');
 copy($root . '/site-config.json', $out . '/site-config.json');
 copy($root . '/404.html', $out . '/404.html');
 
+$indexHtml = '<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0;url=' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">
+</head>
+<body>
+  <p>Redirecting to <a href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">A Migrant\'s Diary on Facebook</a>…</p>
+  <script>window.location.replace(' . json_encode($facebookUrl, JSON_UNESCAPED_SLASHES) . ');</script>
+</body>
+</html>';
+
+build_static_write($out . '/index.html', $indexHtml);
+
 /**
  * @return list<array{file: string, renderer: callable(): void}>
  */
 $pages = [
-    [
-        'file' => 'index.html',
-        'renderer' => static function () use ($root): void {
-            require $root . '/index.php';
-        },
-    ],
     [
         'file' => 'articles.html',
         'renderer' => static function () use ($root): void {
@@ -160,6 +172,7 @@ foreach ($pages as $page) {
 }
 
 fwrite(STDOUT, "Static site written to _site/\n");
+fwrite(STDOUT, "  index.html -> Facebook redirect\n");
 foreach ($pages as $page) {
     fwrite(STDOUT, '  ' . $page['file'] . "\n");
 }

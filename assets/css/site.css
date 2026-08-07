@@ -77,6 +77,110 @@ body.amd-page {
   padding: 20px 0 12px;
 }
 
+.amd-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Language switcher */
+.amd-lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--amd-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.amd-lang-switch__btn {
+  margin: 0;
+  padding: 6px 12px;
+  border: 0;
+  background: #fff;
+  color: var(--amd-text);
+  font-family: var(--amd-font-en);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.amd-lang-switch__btn + .amd-lang-switch__btn {
+  border-left: 1px solid var(--amd-border);
+}
+
+.amd-lang-switch__btn:hover,
+.amd-lang-switch__btn:focus {
+  background: #f7f8fa;
+  color: var(--amd-accent);
+  outline: none;
+}
+
+.amd-lang-switch__btn--active {
+  background: var(--amd-accent);
+  color: #fff;
+}
+
+.amd-lang-switch__btn--active:hover,
+.amd-lang-switch__btn--active:focus {
+  background: var(--amd-accent-hover);
+  color: #fff;
+}
+
+/* Show one language at a time */
+html[data-lang="en"] [lang="si"] {
+  display: none !important;
+}
+
+html[data-lang="si"] [lang="en"] {
+  display: none !important;
+}
+
+html[data-lang="si"] body.amd-page {
+  font-family: var(--amd-font-si);
+}
+
+html[data-lang="si"] .amd-hero__title-si {
+  margin: 0 0 14px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--amd-text);
+}
+
+html[data-lang="si"] .amd-section-title--si,
+html[data-lang="si"] .amd-card__title--si {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+html[data-lang="si"] .amd-article-card__title-si {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+html[data-lang="si"] .amd-topic-card__title-si {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+html[data-lang="si"] .amd-policy-card__label-si {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+.amd-nav__label {
+  display: block;
+}
+
 .amd-header__brand-link {
   color: inherit;
   text-decoration: none;
@@ -146,13 +250,6 @@ body.amd-page {
 .amd-nav__link--current {
   color: var(--amd-accent);
   border-bottom-color: var(--amd-accent-red);
-}
-
-.amd-nav__link-si {
-  font-family: var(--amd-font-si);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--amd-text-muted);
 }
 
 /* Social links */

@@ -24,7 +24,8 @@ if ($sourceList !== []) {
 
 $note = trim((string) ($sources['note'] ?? ''));
 if ($note !== '') {
-    echo '<p class="amd-note">' . aswproject_escape($note) . '</p>';
+    echo '<p class="amd-note" lang="en">' . aswproject_escape($note) . '</p>';
+    echo '<p class="amd-note" lang="si">පක්ෂ ප්‍රතිපත්ති වෙනස් විය හැක. මෙම table compile කළ අවස්ථාවේ publish කළ policy pages reflect කරයි. Share කිරීමට පෙර primary sources පරීක්ෂා කරන්න.</p>';
 }
 
 aswproject_render_page_end();

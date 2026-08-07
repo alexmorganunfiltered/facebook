@@ -46,6 +46,18 @@ function aswproject_render_page_start(array $page): void
   <link rel="stylesheet" href="assets/css/figtree.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/site-mobile.css" media="screen and (max-width: 768px)">
+  <script>
+    (function () {
+      var k = 'amd-lang', q = location.search.match(/[?&]lang=(en|si)\b/);
+      var l = q ? q[1] : null;
+      try { if (!l) { l = localStorage.getItem(k); } } catch (e) {}
+      if (l !== 'en' && l !== 'si') {
+        l = ((navigator.language || '').toLowerCase().indexOf('si') === 0) ? 'si' : 'en';
+      }
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = (l === 'si') ? 'si' : 'en';
+    })();
+  </script>
 </head>
 <body class="amd-page">
   <div class="amd-shell">
@@ -60,6 +72,7 @@ function aswproject_render_page_end(): void
     </main>
     <?php aswproject_render_site_footer(); ?>
   </div>
+  <script src="assets/js/lang.js" defer></script>
 </body>
 </html>
 <?php

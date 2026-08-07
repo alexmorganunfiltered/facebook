@@ -1,5 +1,21 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-07 — Home page reverted to Facebook redirect
+
+**Change:** Removed editorial landing content from home. `index.php` and static `index.html` again redirect to the Facebook page. Other pages (articles, policy comparison, etc.) unchanged.
+
+**Files touched:** `index.php`, `.scripts/build-static.php`, `README.md`.
+
+---
+
+## 2026-08-07 — Language switcher (EN / සිං) with localStorage
+
+**Change:** Header language toggle shows one language at a time site-wide. Preference saved in browser `localStorage` (works on static GitHub Pages — no server or database). Optional `?lang=en|si` URL param. Policy table cells split Sinhala/English by `\n\n` blocks.
+
+**Files touched:** `assets/js/lang.js`, `includes/layout.php`, `includes/components.php`, `includes/siteHelpers.php`, `assets/css/site.css`, `assets/css/site-mobile.css`, `index.php`, `policy-comparison.php`.
+
+---
+
 ## 2026-08-07 — Remove legacy Facebook redirect artifact
 
 **Change:** Deleted unused `azure-index.html` (client-side redirect to Facebook). Added short-lived cache-busting meta tags in layout so browsers drop stale redirect `index.html`. Live GitHub Pages already serves the landing page (verified HTTP 200, no redirect JS).
