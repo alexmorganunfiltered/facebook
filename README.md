@@ -18,8 +18,11 @@ Standalone **public** personal site — **100% self-contained** in this director
 
 | Dev (PHP) | GitHub Pages (static) | Purpose |
 |-----------|------------------------|---------|
-| `index.php` | `index.html` | Redirect to Facebook |
-| `policy-comparison.php` | `policy-comparison.html` | Migration policy comparison |
+| `index.php` | `index.html` | Home — editorial landing |
+| `articles.php` | `articles.html` | Articles and explainers |
+| `policy-comparison.php` | `policy-comparison.html` | One Nation / Labor / Coalition comparison |
+| `australia-explained.php` | `australia-explained.html` | Systems newcomers ask about |
+| `about.php` | `about.html` | About this project |
 
 ---
 
@@ -38,17 +41,20 @@ php .scripts/build-static.php   # local preview → _site/
 ## Config & content
 
 - **`site-config.json`** — Facebook URL, titles, `site_base_url` for canonical links
-- **`content/policy-comparison.json`** — bilingual table data
+- **`content/policy-comparison.json`** — bilingual comparison table (do not edit casually)
+- **`content/*.json`** — page copy for home, articles, about, australia-explained
 
 ---
 
 ## Styles (local only)
 
 ```text
-assets/css/figtree.css
-assets/css/site.css          — theme (#0a3d71 accent)
-assets/css/site-mobile.css
+assets/css/figtree.css       — local font fallback
+assets/css/site.css          — editorial theme (#0a3d71 navy, limited red accents)
+assets/css/site-mobile.css   — stacked policy cards on mobile
 ```
+
+Google Fonts (Inter + Noto Sans Sinhala) load from the layout header.
 
 `global.css` / `global-mobile.css` in `assets/css/` are unused reference copies.
 
@@ -60,10 +66,10 @@ assets/css/site-mobile.css
 aswproject_dev/
 ├── .github/workflows/deploy-pages.yml
 ├── .scripts/build-static.php
-├── index.php / policy-comparison.php   ← local PHP
+├── index.php / articles.php / policy-comparison.php / …
 ├── site-config.json
-├── content/policy-comparison.json
+├── content/
 ├── assets/
-├── includes/
+├── includes/   — layout.php, components.php, siteHelpers.php
 └── .docs/
 ```

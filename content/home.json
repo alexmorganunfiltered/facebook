@@ -1,0 +1,76 @@
+{
+  "meta_description": "Independent migrant-focused editorial site in Sinhala and English — policy, daily life and Australia explained.",
+  "hero": {
+    "eyebrow": "Independent editorial · සිංහල ඔසියා",
+    "title": "Understanding migration and life in Australia",
+    "title_si": "ඕස්ට්‍රේලියාවේ සංක්‍රමණය සහ ජීවිතය අර්ථ කර ගැනීම",
+    "lead": "A Migrant's Diary is a calm, reader-first space for Sinhala speakers and others who want plain-language explanations of Australian policy, news and everyday migrant experience — without campaign slogans or party advertising.",
+    "lead_si": "A Migrant's Diary යනු සිංහල භාෂිකයන්ටත්, ඕස්ට්‍රේලියානු ප්‍රතිපත්ති, පුවත් සහ සංක්‍රමණික දෛනික ජීවිතය පිළිබඳ සරල පැහැදිලි කිරීම් සොයන අයටත් විවෘත, කියවීමට පහසු අවකාශයකි."
+  },
+  "what_we_discuss": {
+    "title": "What we discuss",
+    "title_si": "අප සාකච්ඡා කරන දේ",
+    "items": [
+      {
+        "icon": "policy",
+        "title": "Migration policy",
+        "title_si": "සංක්‍රමණ ප්‍රතිපත්ති",
+        "text": "What parties and governments propose — visas, students, protection, housing links — explained in both languages.",
+        "text_si": "පක්ෂ සහ රජයන් යෝජනා කරන දේ — වීසා, ශිෂ්‍යයින්, ආරක්ෂණ, නිවාස — සිංහල සහ ඉංග්‍රීසි යන දෙභාෂාවෙන්."
+      },
+      {
+        "icon": "explain",
+        "title": "Australia explained",
+        "title_si": "ඕස්ට්‍රේලියාව පැහැදිලි කිරීම",
+        "text": "Systems newcomers ask about: Medicare, Centrelink, citizenship pathways, state vs federal roles.",
+        "text_si": "නව පැමිණෙන්නන් බොහෝ විට අසන පද්ධති: Medicare, Centrelink, පුරවැසිභාවය, පළාත් සහ federation."
+      },
+      {
+        "icon": "daily",
+        "title": "Migrant daily life",
+        "title_si": "සංක්‍රමණික දෛනික ජීවිතය",
+        "text": "Work, family, language, community and the practical questions that official sites rarely answer plainly.",
+        "text_si": "රැකියාව, පවුල, භාෂාව, ප්‍රජාව සහ නිල වෙබ් අඩවි වලින් අඩුවෙන් පැහැදිලි වන දෛනික ප්‍රශ්න."
+      },
+      {
+        "icon": "compare",
+        "title": "Side-by-side comparisons",
+        "title_si": "සංසන්ධන",
+        "text": "Structured tables comparing One Nation, Labor and the Liberal–National Coalition on the same policy questions.",
+        "text_si": "One Nation, Labor සහ Liberal–National Coalition — එකම ප්‍රශ්නවලට side-by-side tables."
+      }
+    ]
+  },
+  "interests": {
+    "title": "Our interest",
+    "title_si": "අපගේ උනන්දුව",
+    "body": "We are interested in clarity, not persuasion. Readers should be able to see what each side says, follow primary sources, and form their own view. This site complements our Facebook page — short posts there, longer explainers here.",
+    "body_si": "අපගේ උනන්දුව පැහැදිලි කිරීමයි, convince කිරීම නොවේ. කියවන්නාට සෑම පක්ෂයක්ම කියන දේ දකින්න, මූලාශ්‍ර අනුගමනය කරන්න, සහ තමන්ගේම අදහසක් හදා ගන්න පුළුවන් විය යුතුයි. Facebook පිටුවේ කෙටඉ posts, මෙහි දිග explainers."
+  },
+  "my_thoughts": {
+    "title": "My thoughts",
+    "title_si": "මගේ අදහස්",
+    "body": "Migration policy affects real households — visas, fees, waiting times, and whether people feel they belong. I write to connect official language with everyday stakes, especially for Sinhala-speaking readers navigating Australia.",
+    "body_si": "සංක්‍රමණ ප්‍රතිපත්ති සැබෑ පවුල්වලට බලපායි — වීසා, ගාස්තු, රැඳී සිටීමේ කාලය, සහ belong වීමට හැඟෙනවාද යන්න. නිල භාෂාව සහ දෛනික ජීවිතය අතර සේතුවක් තැබීමට මම ලියනවා — විශේෂයෙන් ඕස්ට්‍රේලියාව navigate කරන සිංහල කියවන්නන්."
+  },
+  "featured_links": [
+    {
+      "label": "Current policy comparison",
+      "label_si": "වත්මන් ප්‍රතිපත්ති සංසන්ධනය",
+      "href": "policy-comparison",
+      "type": "policy"
+    },
+    {
+      "label": "Australia explained",
+      "label_si": "ඕස්ට්‍රේලියාව පැහැදිලි කිරීම",
+      "href": "australia-explained",
+      "type": "explain"
+    },
+    {
+      "label": "About this project",
+      "label_si": "මෙම project ගැන",
+      "href": "about",
+      "type": "about"
+    }
+  ]
+}

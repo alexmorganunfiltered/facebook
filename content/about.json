@@ -1,0 +1,36 @@
+{
+  "meta_description": "About A Migrant's Diary — an independent editorial project for Sinhala speakers and others navigating Australia.",
+  "hero": {
+    "eyebrow": "About",
+    "title": "About this project",
+    "title_si": "මෙම project ගැන",
+    "lead": "A Migrant's Diary — සිංහල ඔසියා — is a personal editorial project. It is not affiliated with any political party, employer or government agency.",
+    "lead_si": "A Migrant's Diary — සිංහල ඔසියා — personal editorial project එකකි. Political party, employer හෝ government agency එකකට affiliated නොවේ."
+  },
+  "sections": [
+    {
+      "title": "What this is",
+      "title_si": "මෙය කුමක්ද",
+      "body": "A bilingual space for plain-language explainers on migration policy, Australian systems and migrant daily life. Content is written for readers who want context before they decide what they think.",
+      "body_si": "Migration policy, Australian systems සහ migrant daily life පිළිබඳ plain-language explainers සඳහා bilingual space එකක්. Readersට තමන් think කරන්නට පෙර context අවශ්‍ය අය සඳහා ලියනු ලැබේ."
+    },
+    {
+      "title": "What this is not",
+      "title_si": "මෙය නොවන්නේ",
+      "body": "This is not a campaign site, a news wire, or legal advice. Always check official sources and qualified professionals for decisions that affect your visa, tax or health.",
+      "body_si": "Campaign site, news wire, හෝ legal advice නොවේ. Visa, tax හෝ health වලට affect වන decisions සඳහා official sources සහ qualified professionals check කරන්න."
+    },
+    {
+      "title": "Facebook",
+      "title_si": "Facebook",
+      "body": "Our Facebook page carries shorter updates, links and discussion prompts. This website hosts longer tables, articles and reference lists.",
+      "body_si": "Facebook පිටුවේ shorter updates, links සහ discussion prompts. Website එකේ longer tables, articles සහ reference lists."
+    }
+  ],
+  "my_thoughts": {
+    "title": "My thoughts",
+    "title_si": "මගේ අදහස්",
+    "body": "I started the page because friends and family asked the same questions in Sinhala — and the answers were scattered across English-only sites. I hope this site saves someone else that search time.",
+    "body_si": "Friends සහ family සිංහලෙන් same questions අහන නිසා page එක start කළා — answers English-only sites across scattered. Someone elseගේ search time save වේ යයි හිතනවා."
+  }
+}

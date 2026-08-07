@@ -106,7 +106,32 @@ function aswproject_is_static_build(): bool
 
 function aswproject_policy_comparison_href(): string
 {
-    return aswproject_is_static_build() ? 'policy-comparison.html' : 'policy-comparison.php';
+    return aswproject_page_href('policy-comparison');
+}
+
+function aswproject_page_href(string $pageId): string
+{
+    $static = aswproject_is_static_build();
+
+    $map = [
+        'home' => $static ? 'index.html' : 'index.php',
+        'articles' => $static ? 'articles.html' : 'articles.php',
+        'policy-comparison' => $static ? 'policy-comparison.html' : 'policy-comparison.php',
+        'australia-explained' => $static ? 'australia-explained.html' : 'australia-explained.php',
+        'about' => $static ? 'about.html' : 'about.php',
+    ];
+
+    return $map[$pageId] ?? ($static ? 'index.html' : 'index.php');
+}
+
+function aswproject_page_canonical(string $pageId): string
+{
+    $base = aswproject_site_base_url();
+    if ($base === '') {
+        return '';
+    }
+
+    return aswproject_page_url(aswproject_page_href($pageId));
 }
 
 function aswproject_site_base_url(): string

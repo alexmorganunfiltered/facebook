@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "label": "One Nation — immigration policy",
+      "url": "https://www.onenation.org.au/policies/immigration"
+    },
+    {
+      "label": "Australian Labor Party — immigration",
+      "url": "https://www.alp.org.au/our-policies/immigration"
+    },
+    {
+      "label": "Liberal Party — border protection and immigration",
+      "url": "https://www.liberal.org.au/our-policies/border-protection"
+    },
+    {
+      "label": "Department of Home Affairs — migration program",
+      "url": "https://immi.homeaffairs.gov.au/what-we-do/migration-program-planning-levels"
+    }
+  ],
+  "note": "Party positions change. This table reflects published policy pages at the time of compilation. Check primary sources before sharing."
+}

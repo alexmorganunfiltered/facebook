@@ -1,16 +1,16 @@
 /**
- * Narrow viewports — aswproject_dev local mobile styles.
+ * Narrow viewports — editorial site mobile styles.
  */
 
 @media screen and (max-width: 768px) {
   .amd-shell {
-    width: 96%;
+    width: 94%;
     padding-top: 12px;
   }
 
-  .amd-header,
-  .amd-card {
-    padding: 16px;
+  .amd-header__top {
+    flex-direction: column;
+    padding-top: 12px;
   }
 
   .amd-header__brand {
@@ -18,16 +18,100 @@
   }
 
   .amd-header__subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  .amd-header__links {
+  .amd-nav__list {
     flex-direction: column;
   }
 
-  .amd-link {
-    justify-content: center;
+  .amd-nav__link {
     width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--amd-border);
+  }
+
+  .amd-nav__link--current {
+    border-bottom-color: var(--amd-accent-red);
+  }
+
+  .amd-hero__title {
+    font-size: 26px;
+  }
+
+  .amd-hero__title-si {
+    font-size: 18px;
+  }
+
+  .amd-card {
+    padding: 16px;
+  }
+
+  .amd-card-grid,
+  .amd-card-grid--policy,
+  .amd-topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide horizontal table; show stacked policy cards */
+  .amd-table-wrap--desktop {
+    display: none;
+  }
+
+  .amd-policy-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .amd-policy-stack__item {
+    border: 1px solid var(--amd-border);
+    padding: 14px;
+    background: #fff;
+  }
+
+  .amd-policy-stack__topic {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--amd-accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .amd-policy-stack__parties {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .amd-policy-stack__party {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--amd-border);
+  }
+
+  .amd-policy-stack__party:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .amd-policy-stack__party-name {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amd-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .amd-policy-stack__party-body {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--amd-text-muted);
+  }
+
+  .amd-policy-stack__party-body .amd-cell-block--spaced {
+    color: var(--amd-accent);
   }
 
   table.amd-table th,

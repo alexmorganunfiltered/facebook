@@ -1,0 +1,48 @@
+{
+  "meta_description": "Articles and explainers on migration policy, daily life and Australia — in Sinhala and English.",
+  "hero": {
+    "eyebrow": "Articles",
+    "title": "Longer reads and explainers",
+    "title_si": "දිගු ලිපi සහ පැහැදිලි කිරීම්",
+    "lead": "Essays, summaries and bilingual notes that go deeper than a Facebook post. New articles will appear here as they are published.",
+    "lead_si": "Facebook post එකකට වඩා ගැඹුරු essays, summaries සහ bilingual notes. නව ලිපi publish වන විට මෙහි දිස්වනු ඇත."
+  },
+  "articles": [
+    {
+      "slug": "how-to-read-policy-comparisons",
+      "title": "How to read a policy comparison table",
+      "title_si": "ප්‍රතිපත්ති සංසන්ධන table එකක් කියවන්නේ කෙසේද",
+      "excerpt": "What the rows mean, why wording matters, and how to check primary sources before you share a screenshot.",
+      "excerpt_si": "Rows අර්ථය, wording වැදගත් වන්නේ why, screenshot share කිරීමට පෙර primary sources check කරන්නේ how.",
+      "date": "2026-08-07",
+      "href": "policy-comparison",
+      "status": "published"
+    },
+    {
+      "slug": "medicare-basics",
+      "title": "Medicare basics for new arrivals",
+      "title_si": "නව පැමිණෙන්නන්ට Medicare මූලික",
+      "excerpt": "Who is covered, what a Medicare card does, and common questions about temporary vs permanent residents.",
+      "excerpt_si": "Who covered, Medicare card එකේ role, temporary vs permanent residents පිළිබඳ common questions.",
+      "date": "",
+      "href": "australia-explained",
+      "status": "coming_soon"
+    },
+    {
+      "slug": "citizenship-pathways",
+      "title": "Citizenship pathways — an overview",
+      "title_si": "පුරවැසිභාවය — overview",
+      "excerpt": "Residency requirements, tests, and how policy debates can affect timelines.",
+      "excerpt_si": "Residency requirements, tests, policy debates timelines වලට effect.",
+      "date": "",
+      "href": "australia-explained",
+      "status": "coming_soon"
+    }
+  ],
+  "my_thoughts": {
+    "title": "My thoughts",
+    "title_si": "මගේ අදහස්",
+    "body": "I prefer publishing here when a topic needs structure — a table, a timeline, or a list of sources — rather than squeezing it into a comment thread.",
+    "body_si": "Table, timeline, හෝ sources list එකක් අවශ්‍ය topic එකක් comment thread එකකට squeeze කිරීමට වඩා මෙහi publish කිරීම prefer කරනවා."
+  }
+}

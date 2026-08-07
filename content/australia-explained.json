@@ -1,0 +1,60 @@
+{
+  "meta_description": "Plain-language explainers about Australian systems — Medicare, Centrelink, citizenship and more.",
+  "hero": {
+    "eyebrow": "Australia explained",
+    "title": "Systems newcomers ask about",
+    "title_si": "නව පැමිණෙන්නන් අසන පද්ධති",
+    "lead": "Short bilingual overviews of how parts of Australia work. These are starting points — not legal or financial advice.",
+    "lead_si": "Australiaේ කොටස් work වන ආකාරය පිළිබඳ short bilingual overviews. Starting points — legal හෝ financial advice නොවේ."
+  },
+  "topics": [
+    {
+      "icon": "health",
+      "title": "Medicare",
+      "title_si": "Medicare",
+      "text": "Public health cover for eligible residents and visitors with reciprocal agreements. Learn what a Medicare card covers and what it does not.",
+      "text_si": "Eligible residents සහ reciprocal agreements ඇති visitors සඳහා public health cover. Medicare card cover කරන දේ සහ නොකරන දේ."
+    },
+    {
+      "icon": "support",
+      "title": "Centrelink",
+      "title_si": "Centrelink",
+      "text": "Payments and services from Services Australia. Eligibility depends on visa type, residency and income — always check current rules.",
+      "text_si": "Services Australia payments සහ services. Eligibility visa type, residency සහ income මත depend — current rules check කරන්න."
+    },
+    {
+      "icon": "passport",
+      "title": "Citizenship",
+      "title_si": "පුරවැසිභාවය",
+      "text": "Residency requirements, the citizenship test, and how permanent residency differs from citizenship.",
+      "text_si": "Residency requirements, citizenship test, permanent residency citizenshipගෙන් differ වන ආකාරය."
+    },
+    {
+      "icon": "map",
+      "title": "States and federal roles",
+      "title_si": "පළාත් සහ federal roles",
+      "text": "Why housing, health and education sometimes involve both state and Commonwealth governments.",
+      "text_si": "Housing, health සහ education state සහ Commonwealth governments දෙක involve වන්නේ why."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Services Australia",
+      "url": "https://www.servicesaustralia.gov.au/"
+    },
+    {
+      "label": "Department of Home Affairs",
+      "url": "https://immi.homeaffairs.gov.au/"
+    },
+    {
+      "label": "Medicare — Services Australia",
+      "url": "https://www.servicesaustralia.gov.au/medicare"
+    }
+  ],
+  "my_thoughts": {
+    "title": "My thoughts",
+    "title_si": "මගේ අදහස්",
+    "body": "Official sites are accurate but dense. These pages aim to translate structure — who does what, and which form to open first — before you dive into the fine print.",
+    "body_si": "Official sites accurate නමුත් dense. Fine print dive කිරීමට පෙර structure translate කිරීම — who does what, first form කුමක් — මෙම pages aim."
+  }
+}

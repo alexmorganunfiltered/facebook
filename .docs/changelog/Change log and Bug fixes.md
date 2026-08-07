@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-07 — Multi-page editorial landing site for GitHub Pages
+
+**Change:** Built responsive static editorial site with five pages (Home, Articles, Policy Comparisons, Australia Explained, About). Reusable components in `includes/components.php` (header, footer, hero, article cards, policy cards, comparison table + mobile stacked cards, sources, My Thoughts, social links). White editorial design with navy/black/grey and limited red accents; Inter + Noto Sans Sinhala fonts. `policy-comparison.json` table data unchanged; sources in separate `policy-comparison-sources.json`. Static build generates all HTML pages (home no longer Facebook redirect).
+
+**Files touched:** `index.php`, `articles.php`, `about.php`, `australia-explained.php`, `policy-comparison.php`, `includes/layout.php`, `includes/components.php`, `includes/siteHelpers.php`, `assets/css/site.css`, `assets/css/site-mobile.css`, `.scripts/build-static.php`, `404.html`, `README.md`, `content/home.json`, `content/articles.json`, `content/about.json`, `content/australia-explained.json`, `content/policy-comparison-sources.json`.
+
+---
+
 ## 2026-08-07 — Table cell hover and English text colour
 
 **Change:** English blocks in table cells (`.amd-cell-block--spaced`) use dark blue (`--amd-accent`). Hover highlights single cell only, not entire row.

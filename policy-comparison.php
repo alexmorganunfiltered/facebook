@@ -1,22 +1,30 @@
 <?php
 declare(strict_types=1);
 
-require __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/layout.php';
 
-$site = aswproject_load_site_config();
 $content = aswproject_load_content_json('policy-comparison.json');
+$sources = aswproject_load_content_json('policy-comparison-sources.json');
 
 $pageTitle = trim((string) ($content['page_title'] ?? 'Current comparison'));
-$canonical = aswproject_site_base_url() !== ''
-    ? aswproject_page_url(aswproject_policy_comparison_href())
-    : 'https://staffservices.huntingtower.vic.edu.au/custom/aswproject_dev/policy-comparison.php';
 
 aswproject_render_page_start([
     'title' => $pageTitle,
     'description' => trim((string) ($content['intro'] ?? 'Migration policy comparison across major parties.')),
-    'canonical' => $canonical,
+    'canonical' => aswproject_page_canonical('policy-comparison'),
+    'current' => 'policy-comparison',
 ]);
 
-aswproject_render_content_table($content);
+aswproject_render_policy_comparison($content);
+
+$sourceList = is_array($sources['sources'] ?? null) ? $sources['sources'] : [];
+if ($sourceList !== []) {
+    aswproject_render_source_list($sourceList);
+}
+
+$note = trim((string) ($sources['note'] ?? ''));
+if ($note !== '') {
+    echo '<p class="amd-note">' . aswproject_escape($note) . '</p>';
+}
 
 aswproject_render_page_end();
