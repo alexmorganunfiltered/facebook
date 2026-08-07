@@ -1,0 +1,87 @@
+# Change log and Bug fixes — aswproject_dev
+
+## 2026-08-07 — GitHub Pages deploy for migrantsdiary/facebook
+
+**Change:** Added GitHub Actions workflow and `.scripts/build-static.php` to publish static site to https://migrantsdiary.github.io/facebook/ from repo https://github.com/migrantsdiary/facebook. Set `site_base_url` in `site-config.json`. Nav/canonical URLs switch between `.php` (local) and `.html` (Pages build).
+
+**Files touched:** `.github/workflows/deploy-pages.yml`, `.scripts/build-static.php`, `.gitignore`, `.docs/github-pages.md`, `site-config.json`, `includes/siteHelpers.php`, `includes/layout.php`, `policy-comparison.php`, `404.html`, `README.md`.
+
+**Next:** Push to `main`, enable Pages source “GitHub Actions” in repo Settings.
+
+---
+
+## 2026-08-07 — Darker blue; local-only active CSS
+
+**Change:** Darkened accent/table header blue to `#0a3d71`. Stopped loading `global.css` / `global-mobile.css` at runtime; all active styles now live in `site.css` and `site-mobile.css` with `.amd-*` classes only. Updated `404.html` to use local stylesheets.
+
+**Files touched:** `assets/css/site.css`, `assets/css/site-mobile.css`, `includes/layout.php`, `404.html`, `README.md`.
+
+---
+
+## 2026-08-07 — Bilingual Sinhala/English policy table
+
+**Change:** Updated `content/policy-comparison.json` with full Sinhala and English text for all 11 policy rows and bilingual column headers. Cell renderer splits on blank lines so Sinhala appears above English with spacing in every cell.
+
+**Files touched:** `content/policy-comparison.json`, `includes/siteHelpers.php`, `includes/layout.php`, `assets/css/site.css`.
+
+---
+
+## 2026-08-07 — Desktop layout uses 90% page width
+
+**Change:** Main content shell (`.amd-shell`) now spans 90% of viewport width on desktop instead of a capped 1100px column.
+
+**Files touched:** `assets/css/site.css`.
+
+---
+
+## 2026-08-07 — Document public-site policy (no auth)
+
+**Change:** Recorded that this app is fully public — no SchoolBox, staff login, or session checks. Added `.docs/PUBLIC-SITE.md` and `.cursor/rules/public-no-auth.mdc` so future work does not add authentication.
+
+**Files touched:** `.docs/PUBLIC-SITE.md`, `.cursor/rules/public-no-auth.mdc`, `README.md`, `includes/siteHelpers.php`.
+
+---
+
+## 2026-08-07 — Migration policy comparison table
+
+**Change:** Added full 11-row party comparison table on `policy-comparison.php` (Policy area, One Nation, Labor government, Liberal–National Coalition). Replaced episodes placeholder. Improved comparison table styling (top-aligned cells, wider layout).
+
+**Files touched:** `policy-comparison.php`, `content/policy-comparison.json`, `includes/layout.php`, `assets/css/site.css`, `README.md`. Removed `episodes.php`, `content/episodes.json`.
+
+---
+
+## 2026-08-07 — Episodes page + self-contained Figtree styling
+
+**Change:** Added `episodes.php` with JSON-driven table, local copies of `global.css`, `global-mobile.css`, Figtree fonts, and `site.css` (Facebook-style Figtree theme for [A Migrant's Diary](https://www.facebook.com/people/A-Migrants-Diary-%E0%B7%83%E0%B7%92%E0%B6%82%E0%B7%84%E0%B6%BD-%E0%B6%94%E0%B7%83%E0%B7%92%E0%B6%BA%E0%B7%8F/61574611752422/)). Project assets are fully contained under `aswproject_dev/` for future server migration.
+
+**Files touched:** `episodes.php`, `content/episodes.json`, `assets/css/*`, `assets/fonts/figtree/*`, `includes/layout.php`, `includes/siteHelpers.php`, `site-config.json`, `README.md`.
+
+**Next:** Add episode rows to `content/episodes.json` (table data was not included in the request).
+
+---
+
+## 2026-08-07 — Fix local redirect (no server config changes)
+
+**Issue:** Visiting the site showed “Unable to load redirect configuration.” Apache served `index.html` before `index.php`, and `config/site-config.json` returned 403 over HTTP.
+
+**Fix:** Removed root `index.html`; local entry is `index.php` only. Moved config to public `site-config.json` at project root. Added `azure-index.html` as the static redirect template for future Azure deploy.
+
+**Files touched:** `index.html` (removed), `site-config.json`, `site-config.example.json`, `azure-index.html`, `includes/redirectTarget.php`, `staticwebapp.config.json`, `README.md`, `config/` (removed).
+
+---
+
+## 2026-08-07 — Initial local scaffold
+
+**Change:** Created standalone static site project for future Azure Static Web Apps hosting. Public site with no authentication.
+
+**Behaviour:**
+- `index.php` redirects visitors to the Facebook page URL defined in `site-config.json`.
+- Redirect target is validated (HTTPS, facebook.com hosts only) to avoid open-redirect misconfiguration.
+
+**Files touched:**
+- `index.php`, `index.html`, `404.html`, `staticwebapp.config.json`
+- `config/site-config.json`, `config/site-config.example.json`
+- `includes/redirectTarget.php`
+- `README.md`
+
+**Next:** Set real Facebook URL in `site-config.json`; provision Azure SWA and GitHub workflow when ready.

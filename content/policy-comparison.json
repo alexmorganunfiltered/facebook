@@ -1,0 +1,78 @@
+{
+  "page_title": "Current comparison",
+  "intro": "Migration policy comparison across major parties. Sinhala and English.",
+  "columns": [
+    { "key": "policy_area", "label": "ප්‍රතිපත්ති ක්ෂේත්‍රය\n\nPolicy area", "type": "text" },
+    { "key": "one_nation", "label": "One Nation", "type": "text" },
+    { "key": "labor", "label": "ලේබර් රජය\n\nLabor government", "type": "text" },
+    { "key": "coalition", "label": "ලිබරල්–ජාතික සන්ධානය\n\nLiberal–National Coalition", "type": "text" }
+  ],
+  "rows": [
+    {
+      "policy_area": "සමස්ත සංක්‍රමණ මට්ටම\n\nOverall migration level",
+      "one_nation": "වාර්ෂික වීසා සංඛ්‍යාව 130,000කට සීමා කර ලේබර් රජයේ මට්ටමට වඩා 570,000කට අධික සංක්‍රමණයක් අඩු කරන බව පවසයි. කෙසේ වෙතත්, මෙම 130,000 යනු ස්ථිර වීසාද, සමස්ත වීසාද, නැතහොත් ශුද්ධ විදේශ සංක්‍රමණය (NOM) ද යන්න පැහැදිලි කර නොමැත.\n\nSays it would cap visas at 130,000 annually and cut immigration by more than 570,000 from Labor levels. The policy page does not clearly explain whether 130,000 means permanent visas, total visas or NOM.",
+      "labor": "2026–27 ස්ථිර සංක්‍රමණ වැඩසටහන සඳහා ස්ථාන 185,000ක් වෙන් කර ඇති අතර, ඒවායින් 70%ක් නිපුණතා සහ 30%ක් පවුල් කාණ්ඩයට අයත් වේ. ඉන් 129,590ක් දැනටමත් ඕස්ට්‍රේලියාවේ සිටින සංක්‍රමණිකයන් සඳහාත්, 55,110ක් විදේශයන්හි සිටින අය සඳහාත්, 300ක් විශේෂ සුදුසුකම් කාණ්ඩයටත් වෙන් කර ඇත.\n\nThe 2026–27 permanent Migration Program is 185,000 places, roughly 70% skilled and 30% family. Of those, 129,590 are allocated to migrants already in Australia, with 55,110 offshore places plus 300 special-eligibility places.",
+      "coalition": "වාර්ෂික ශුද්ධ විදේශ සංක්‍රමණය (NOM) නව නිවාස ඉදිකිරීම් සංඛ්‍යාවට වඩා අඩු මට්ටමක තබන බව පවසයි. නමුත් නිශ්චිත ජාතික සංඛ්‍යාවක් ප්‍රකාශ කර නැත.\n\nWould cap annual NOM below the number of new homes completed, rather than nominate one fixed national figure."
+    },
+    {
+      "policy_area": "නිපුණතා සංක්‍රමණය\n\nSkilled migration",
+      "one_nation": "නිපුණතා වීසා පද්ධතිය ලාභදායී විදේශ ශ්‍රමය ගෙන්වා ගැනීමට අනිසි ලෙස භාවිතා කරන බව පවසමින් දැඩි පාලන පොරොන්දු වෙයි. රැකියා පරීක්ෂණ, වැටුප් හෝ සේවායෝජක වගකීම් පිළිබඳ විස්තර බොහෝ දුරට ලබා නොදෙයි.\n\nSays skilled visas are being “rorted” to supply cheaper foreign labour and promises tighter controls. It does not provide much operational detail on occupation testing, salaries or employer obligations.",
+      "labor": "ඕස්ට්‍රේලියානුවන් නොමැති අවස්ථාවල කම්කරු හිඟය සහ ඵලදායිතාව සපුරාලීම සඳහා විශාල නිපුණතා සංක්‍රමණ ප්‍රවාහයක් පවත්වාගෙන යයි.\n\nMaintains a large skilled stream intended to address labour shortages and productivity needs where Australians are unavailable.",
+      "coalition": "සැබෑ කම්කරු හිඟයන්ට ගැළපෙන ලෙස නිපුණතා සංක්‍රමණය ප්‍රතිසංස්කරණය කරන බවත්, ලේබර් රජය වැරදි රැකියා කාණ්ඩ තෝරාගෙන ඇති බවත් පවසයි.\n\nPromises to overhaul skilled migration so entrants better match genuine shortages, arguing that Labor has selected the wrong mix of occupations."
+    },
+    {
+      "policy_area": "ජාත්‍යන්තර සිසුන්\n\nInternational students",
+      "one_nation": "ශිෂ්‍ය වීසා ස්ථිර පදිංචිය හෝ අඩු වැටුප් රැකියා සඳහා මාර්ගයක් ලෙස භාවිතා කරන බව පවසමින් එම හිඩැස් වසා දමන බව කියයි. ප්‍රධාන ප්‍රතිපත්ති පිටුවේ නිශ්චිත ශිෂ්‍ය සීමාවක් සඳහන් නොවේ.\n\nSays student visas are being used as a pathway to permanent residency or low-wage work and promises to close those loopholes. No precise student cap is stated on the main policy page.",
+      "labor": "පාලිත වර්ධන ක්‍රමයක් භාවිතා කරයි. 2026 සඳහා නව විදේශීය ශිෂ්‍ය ආරම්භකයන්ගේ සැලසුම් මට්ටම 295,000ක් වන අතර, අධ්‍යාපන අංශය තිරසාරව පවත්වා ගැනීම එහි අරමුණ බව රජය පවසයි.\n\nUses a managed-growth model. The 2026 National Planning Level is 295,000 new overseas student commencements; the government says this is intended to keep the sector sustainable.",
+      "coalition": "ප්‍රධාන අවධානය අඩු සංක්‍රමණයක් සහ පද්ධතියේ විශ්වාසනීයභාවය මත යොමු කරයි. ප්‍රකාශිත ප්‍රතිපත්තියේ වෙනම ශිෂ්‍ය සංඛ්‍යාත්මක සීමාවක් නොමැත.\n\nCurrent public policy focuses more broadly on lower migration and system integrity. Its main migration page does not publish a separate numerical student cap."
+    },
+    {
+      "policy_area": "නීති විරෝධී විදේශිකයන් සහ වීසා කල් ඉකුත් වූ අය\n\nUnlawful non-citizens and overstayers",
+      "one_nation": "නීති විරෝධී සංක්‍රමණිකයන් 75,000ක් පමණ, එනම් වීසා කල් ඉකුත් වූවන්, නීති විරෝධී ලෙස සේවය කරන අය සහ නීති විරෝධී පදිංචිකරුවන් පිටුවහල් කළ යුතු බව පවසයි.\n\nSays approximately 75,000 unlawful migrants should be deported, including overstayers, unlawful workers and unlawful non-residents.",
+      "labor": "වත්මන් නීතිය යටතේ රඳවා තැබීම, වීසා අවලංගු කිරීම සහ පිටුවහල් කිරීම සඳහා ප්‍රතිපාදන ඇත. නමුත් ඒ සඳහා නීතිමය සමාලෝචන, ආරක්ෂණ වගකීම් සහ පුද්ගලික තත්ත්වයන් සලකා බැලේ. One Nation යෝජනා කරන වහාම සමූහ පිටුවහල් කිරීමේ ප්‍රතිපත්තිය ලේබර් අනුගමනය නොකරයි.\n\nCurrent law already allows detention, visa cancellation and removal, but implementation involves legal review, protection obligations and individual circumstances. Labor has not adopted One Nation’s proposed blanket immediate-deportation program.",
+      "coalition": "නීති විරෝධී විදේශිකයන් 77,000ක් පමණ ඕස්ට්‍රේලියාවේ සිටින බව පවසමින්, ඔවුන් ඉවත් කිරීම සඳහා අමතර අරමුදල් සහ නීති ක්‍රියාත්මක කිරීම ශක්තිමත් කරන බව කියයි.\n\nSays around 77,000 unlawful non-citizens are in Australia and promises additional funding and enforcement to remove people with no right to remain."
+    },
+    {
+      "policy_area": "අපරාධ සඳහා වීසා අවලංගු කිරීම\n\nVisa cancellation for crime",
+      "one_nation": "නීතිය කඩ කරන ඕනෑම වීසා හිමියෙකුගේ වීසා අවලංගු කර පිටුවහල් කළ යුතු බව පවසයි. බරපතළ අපරාධ සහ සුළු වැරදි අතර වෙනසක් නොදක්වයි.\n\nSays any visa holder who breaks the law should lose the visa and be deported. The wording does not distinguish serious crime from minor offences.",
+      "labor": "වත්මන් චරිත පරීක්ෂණ සහ වීසා අවලංගු කිරීමේ පද්ධතිය භාවිතා කරයි. අපරාධ ඉතිහාසය, දඬුවම්, අවදානම සහ නීතිමය වගකීම් සලකා බලයි.\n\nUses the existing character-test and visa-cancellation framework, which considers factors such as criminal history, sentence, risk and legal obligations.",
+      "coalition": "Australian Values Statement උල්ලංඝනය කිරීම චරිත පරීක්ෂණයෙන් අසමත් වීමට සහ වීසා අහිමි වීමට හේතුවක් බවට පත් කරන බව කියයි.\n\nWould make breaches of the Australian Values Statement grounds for failing the character test and potentially losing a visa."
+    },
+    {
+      "policy_area": "පුරවැසිභාවය සඳහා බලා සිටීමේ කාලය\n\nCitizenship waiting period",
+      "one_nation": "පුරවැසිභාවයට සුදුසුකම් ලැබීමට පෙර වසර 8ක් බලා සිටිය යුතු බව යෝජනා කරයි.\n\nProposes eight years before citizenship eligibility.",
+      "labor": "වත්මන් නීතිය අනුව පුරවැසිභාවය සඳහා නීත්‍යානුකූල පදිංචිය සහ ස්ථිර පදිංචි තත්ත්වය ඇතුළු පදිංචි අවශ්‍යතා සපුරාලිය යුතුය. වසර 8ක සාමාන්‍ය බලා සිටීමේ කාලයක් ලේබර් හඳුන්වා දී නොමැත.\n\nCurrent citizenship eligibility generally depends on lawful residence and permanent-resident status, including residence requirements; Labor has not adopted an eight-year general waiting period.",
+      "coalition": "වත්මන් ප්‍රකාශිත සංක්‍රමණ සැලැස්මේ වසර 8ක සාමාන්‍ය පුරවැසිභාව බලා සිටීමේ කාලයක් නොමැත.\n\nNo general eight-year citizenship waiting period appears in the current published migration plan."
+    },
+    {
+      "policy_area": "සුබසාධන දීමනා සඳහා බලා සිටීමේ කාලය\n\nWelfare waiting period",
+      "one_nation": "නව සංක්‍රමණිකයන්ට සුබසාධන දීමනා සඳහා වසර 8ක් බලා සිටිය යුතු බව යෝජනා කරයි. දුෂ්කරතා, දරුවන්, ආබාධිතයන් හෝ මානුෂීය වීසාලාභීන් සඳහා ව්‍යතිරේක පැහැදිලි කර නැත.\n\nProposes an eight-year wait for welfare for new arrivals. The policy page does not detail exceptions for hardship, children, disability or humanitarian entrants.",
+      "labor": "නව පදිංචිකරුවන්ට ඇතැම් දීමනා සහ සහන කාඩ්පත් සඳහා වීසා වර්ගය සහ ව්‍යතිරේක අනුව වසර 4ක් දක්වා බලා සිටීමට සිදු විය හැකිය.\n\nNewly arrived residents can already wait up to four years for many payments and concession cards, depending on the payment, visa and exemptions.",
+      "coalition": "වත්මන් ප්‍රකාශිත සැලැස්මේ වසර 8ක පොදු සුබසාධන බලා සිටීමේ කාලයක් නොමැත.\n\nNo broad eight-year waiting period appears in the current published plan."
+    },
+    {
+      "policy_area": "තාවකාලික ආරක්ෂණ වීසා (TPV)\n\nTemporary Protection Visas",
+      "one_nation": "ඇතැම් ආරක්ෂණ ඉල්ලීම් ස්ථිර පදිංචියට ස්වයංක්‍රීයව මඟ නොවීමට TPV නැවත හඳුන්වා දෙන බව කියයි.\n\nWould reintroduce TPVs to prevent some protection claims from leading automatically to permanent settlement.",
+      "labor": "One Nation යෝජනා කරන TPV ක්‍රමය අනුගමනය නොකරයි. වත්මන් පද්ධතිය යටතේ ස්ථිර මානුෂීය සහ ආරක්ෂණ මාර්ග ක්‍රියාත්මක කරයි. 2025–26 දී මානුෂීය ස්ථාන 20,000ක් පවත්වාගෙන ගියේය.\n\nDoes not use One Nation’s proposed TPV framework as its general policy. Labor operates permanent humanitarian and protection pathways under the current system. Australia maintained 20,000 humanitarian places in 2025–26.",
+      "coalition": "තාවකාලික ආරක්ෂණ වීසා නැවත හඳුන්වා දෙන බව පොරොන්දු වෙයි.\n\nAlso promises to restore Temporary Protection Visas."
+    },
+    {
+      "policy_area": "සරණාගත සම්මුතිය\n\nRefugee Convention",
+      "one_nation": "එක්සත් ජාතීන්ගේ සරණාගත සම්මුතියෙන් ඕස්ට්‍රේලියාව ඉවත් වී මානුෂීය ඇතුළත් කිරීම් දේශීයව තීරණය කළ යුතු බව පවසයි.\n\nWould withdraw Australia from the UN Refugee Convention so humanitarian intake decisions are made domestically.",
+      "labor": "ජාත්‍යන්තර ආරක්ෂණ වගකීම් පිළිගෙන සරණාගත හා මානුෂීය වැඩසටහන් පවත්වාගෙන යයි.\n\nSupports Australia’s international protection obligations and maintains a refugee and humanitarian program.",
+      "coalition": "දැඩි පරීක්ෂණ, “ආරක්ෂිත රටවල්” ලැයිස්තුවක් සහ පදනම් රහිත ඉල්ලීම් ඉක්මනින් ප්‍රතික්ෂේප කිරීම යෝජනා කරයි. නමුත් සරණාගත සම්මුතියෙන් ඉවත් වීමක් යෝජනා කර නැත.\n\nPromises stricter screening, a “safe country” list and faster rejection of unfounded claims, but its current published plan does not propose withdrawing from the Refugee Convention."
+    },
+    {
+      "policy_area": "ඕස්ට්‍රේලියානු වටිනාකම් සහ සමාජයට ඒකාබද්ධ වීම\n\nAustralian values and integration",
+      "one_nation": "ඕස්ට්‍රේලියානු වටිනාකම්වලට නොගැළපෙන අන්තවාදී අදහස් ප්‍රවර්ධනය කරන රටවල අයදුම්කරුවන්ට ඇතුළුවීම ප්‍රතික්ෂේප කරන බව පවසයි. එම රටවල් තෝරාගන්නා ආකාරය හෝ ව්‍යතිරේක පැහැදිලි කර නැත.\n\nWould refuse entry to applicants from countries said to foster extremist ideologies incompatible with Australian values. The policy does not explain the country-selection test or individual exemptions.",
+      "labor": "වත්මන් ආරක්ෂක, චරිත සහ වීසා ඇගයීම් පද්ධති භාවිතා කරයි. රට පදනම් කරගත් මතවාදී තහනම් ප්‍රතිපත්තියක් ප්‍රකාශ කර නැත.\n\nUses existing security, character and visa-assessment systems rather than a published country-based ideological exclusion policy.",
+      "coalition": "Australian Values Statement පිළිපැදීම වීසා තත්ත්වයේ අඛණ්ඩ කොන්දේසියක් බවට පත් කර, ආරක්ෂක සහ සමාජ මාධ්‍ය පරීක්ෂණ වැඩි කරන බව කියයි.\n\nWould make compliance with the Australian Values Statement an ongoing visa condition and increase security and social-media screening."
+    },
+    {
+      "policy_area": "නිවාස ප්‍රශ්නය සමඟ සම්බන්ධය\n\nLink to housing",
+      "one_nation": "සංක්‍රමණය අඩු කිරීමෙන් නිවාස සහ යටිතල පහසුකම් මත ඇති පීඩනය අඩු වන බව පවසයි.\n\nSays lower migration would reduce pressure on housing and infrastructure.",
+      "labor": "ස්ථිර සංක්‍රමණ වැඩසටහන 185,000ක් ලෙස පවත්වාගෙන යන අතර, නිවාස සැපයුම සහ තාවකාලික සංක්‍රමණය වෙන වෙනම කළමනාකරණය කරයි.\n\nRetains a 185,000 permanent program while separately managing housing supply and temporary migration settings.",
+      "coalition": "ශුද්ධ විදේශ සංක්‍රමණය (NOM) නව නිවාස ඉදිකිරීම් සංඛ්‍යාවට වඩා අඩු විය යුතු බව පැහැදිලිවම ප්‍රකාශ කරයි.\n\nExplicitly links NOM to housing construction: migration must remain below the number of new homes completed."
+    }
+  ]
+}

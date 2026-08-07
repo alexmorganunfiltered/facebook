@@ -1,0 +1,81 @@
+/**
+ * Narrow viewports — shared tweaks (width/layout unchanged on title bar).
+ * Load with: media="screen and (max-width: 768px)"
+ *
+ * Copy/symlink to: custom/assets/css/global-mobile.css (when directory is writable).
+ */
+
+@media screen and (max-width: 768px) {
+  .ht-page-titlebar__heading,
+  .ht-page-titlebar .ht-page-titlebar__heading {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .ht-page-titlebar__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Match timesheetForm.php mobile primary inline sizing */
+  .ht-btn-submit,
+  .ht-btn-pdf,
+  button.ht-btn-submit,
+  button.ht-btn-pdf,
+  input[type="submit"].ht-btn-submit,
+  input[type="submit"].ht-btn-pdf,
+  .ht-btn-secondary,
+  .ht-btn-back,
+  .ht-btn-csv,
+  button.ht-btn-secondary,
+  button.ht-btn-back,
+  button.ht-btn-csv,
+  a.ht-btn-secondary,
+  a.ht-btn-back,
+  a.ht-btn-csv,
+  input[type="submit"].ht-btn-csv,
+  input[type="button"].ht-btn-secondary,
+  input[type="button"].ht-btn-back,
+  input[type="button"].ht-btn-csv,
+  input[type="reset"].ht-btn-secondary,
+  input[type="reset"].ht-btn-back,
+  input[type="reset"].ht-btn-csv {
+    padding: 8px 12px;
+    min-height: 36px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+
+  .ht-table th,
+  .ht-table td {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+
+  .ht-btn-filter-apply,
+  .ht-btn-filter-clear {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .ht-page-titlebar__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .ht-stat-card {
+    min-width: 100%;
+  }
+
+  .ht-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ht-toolbar .ht-btn-submit,
+  .ht-toolbar .ht-btn-filter-apply,
+  .ht-toolbar .ht-btn-filter-clear,
+  .ht-toolbar .ht-btn-back {
+    width: 100%;
+  }
+}

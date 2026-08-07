@@ -1,0 +1,24 @@
+---
+description: aswproject_dev is a fully public site — never add authentication
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# aswproject_dev — public site only
+
+This app is **100% public**. Non-private content; no login; no SchoolBox or staff identity checks.
+
+## Never add
+
+- SchoolBox remote auth, HMAC, JWT, `staffId`, `staffEmail`, sessions, or login pages
+- Includes from `custom/includes/`, `userRoles.php`, Synergetic auth, portalDb/staffDb for access control
+- ICT-only gates, VLAN restrictions, or Apache/server config from this project
+
+## Do
+
+- Keep pages self-contained under `aswproject_dev/`
+- Use local `assets/` CSS/fonts and `content/*.json` for data
+- Escape HTML output; do not treat escaping as authorization
+
+See `.docs/PUBLIC-SITE.md`.

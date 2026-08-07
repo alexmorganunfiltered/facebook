@@ -1,0 +1,263 @@
+/**
+ * A Migrant's Diary — all app styles (Figtree / personal site theme).
+ * Active stylesheets: figtree.css, site.css, site-mobile.css.
+ * global.css / global-mobile.css in this folder are unused reference copies.
+ */
+
+:root {
+  --amd-page-bg: #f0f2f5;
+  --amd-card-bg: #ffffff;
+  --amd-text: #050505;
+  --amd-text-muted: #65676b;
+  --amd-accent: #0a3d71;
+  --amd-accent-hover: #082f57;
+  --amd-border: #dddfe2;
+  --amd-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  --amd-table-border: var(--amd-border);
+  --amd-table-header-bg: var(--amd-accent);
+  --amd-table-header-text: #ffffff;
+  --amd-table-row-alt: #f7f8fa;
+  --amd-table-row-hover: #d4e4f4;
+  --amd-table-text: var(--amd-text);
+  --amd-table-font-size: 14px;
+  --amd-table-cell-padding-y: 9px;
+  --amd-table-cell-padding-x: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.amd-page {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--amd-page-bg);
+  color: var(--amd-text);
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.amd-shell {
+  width: 90%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.amd-header {
+  background: var(--amd-card-bg);
+  border: 1px solid var(--amd-border);
+  border-radius: 8px;
+  box-shadow: var(--amd-card-shadow);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.amd-header__brand {
+  margin: 0 0 4px;
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--amd-text);
+}
+
+.amd-header__subtitle {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--amd-text-muted);
+}
+
+.amd-header__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.amd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--amd-accent);
+  color: #fff;
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.amd-link:hover,
+.amd-link:focus {
+  background: var(--amd-accent-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.amd-link--secondary {
+  background: #e4e6eb;
+  color: var(--amd-text);
+}
+
+.amd-link--secondary:hover,
+.amd-link--secondary:focus {
+  background: #d8dadf;
+  color: var(--amd-text);
+}
+
+.amd-card {
+  background: var(--amd-card-bg);
+  border: 1px solid var(--amd-border);
+  border-radius: 8px;
+  box-shadow: var(--amd-card-shadow);
+  padding: 20px 24px 24px;
+}
+
+.amd-card__title {
+  margin: 0 0 8px;
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+.amd-card__intro {
+  margin: 0 0 16px;
+  color: var(--amd-text-muted);
+  font-size: 15px;
+}
+
+.amd-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table.amd-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--amd-table-border);
+  overflow: hidden;
+  background: var(--amd-card-bg);
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+table.amd-table th,
+table.amd-table td {
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: var(--amd-table-font-size);
+  color: var(--amd-table-text);
+  padding: var(--amd-table-cell-padding-y) var(--amd-table-cell-padding-x);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--amd-table-border);
+  vertical-align: middle;
+}
+
+table.amd-table thead th {
+  background: var(--amd-table-header-bg);
+  color: var(--amd-table-header-text);
+  font-weight: 700;
+  text-align: left;
+  white-space: normal;
+}
+
+table.amd-table tbody tr:nth-child(even) td {
+  background: var(--amd-table-row-alt);
+}
+
+table.amd-table tbody tr:hover td {
+  background: var(--amd-table-row-hover);
+}
+
+table.amd-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+table.amd-table.amd-table--compare th,
+table.amd-table.amd-table--compare td {
+  vertical-align: top;
+  min-width: 11rem;
+  line-height: 1.45;
+}
+
+table.amd-table.amd-table--compare th:first-child,
+table.amd-table.amd-table--compare td:first-child {
+  font-weight: 600;
+  min-width: 9rem;
+  max-width: 13rem;
+}
+
+.amd-cell-block {
+  margin: 0;
+}
+
+.amd-cell-block--spaced {
+  margin-top: 0.85em;
+}
+
+table.amd-table td p.amd-cell-block {
+  margin-bottom: 0;
+}
+
+table.amd-table thead th p.amd-cell-block {
+  margin: 0;
+  font-weight: inherit;
+}
+
+table.amd-table thead th p.amd-cell-block--spaced {
+  margin-top: 0.5em;
+  font-weight: inherit;
+}
+
+.amd-table a {
+  color: var(--amd-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.amd-table a:hover,
+.amd-table a:focus {
+  color: var(--amd-accent-hover);
+  text-decoration: underline;
+}
+
+.amd-empty {
+  margin: 0;
+  padding: 16px;
+  border-radius: 6px;
+  background: #f7f8fa;
+  color: var(--amd-text-muted);
+  text-align: center;
+}
+
+.amd-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--amd-text-muted);
+}
+
+.amd-not-found {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 40rem;
+  font-family: Figtree, "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--amd-text);
+}
+
+.amd-not-found a {
+  color: var(--amd-accent);
+}
+
+.amd-not-found a:hover,
+.amd-not-found a:focus {
+  color: var(--amd-accent-hover);
+}
