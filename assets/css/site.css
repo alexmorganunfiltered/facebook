@@ -191,11 +191,15 @@ html[data-lang="si"] .amd-policy-card__label-si {
 .amd-header__logo {
   display: block;
   width: auto;
-  max-width: 200px;
-  height: 40px;
-  margin-bottom: 8px;
+  max-width: 280px;
+  height: 56px;
   object-fit: contain;
   object-position: left center;
+}
+
+.amd-header__brand-link--logo-only .amd-header__brand,
+.amd-header__brand-link--logo-only .amd-header__subtitle {
+  display: none;
 }
 
 .amd-header__brand-link:hover,

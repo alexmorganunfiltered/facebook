@@ -1,5 +1,15 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Logo fix and site name Alex Morgan Unfiltered
+
+**Issue:** Logo uploaded to GitHub (`assets/images/logo.jpg`) but live `site-config.json` still had `"site_logo": ""`, so header showed text only.
+
+**Fix:** Set `site_logo` in `site-config.json`. Unified site name to **Alex Morgan Unfiltered** (single `site_title`, empty subtitle). Header shows logo only when configured (no duplicate text). News cards use brand helper.
+
+**Files touched:** `site-config.json`, `includes/siteHelpers.php`, `includes/components.php`, `includes/layout.php`, `assets/css/site.css`, `content/articles.json`, `content/about.json`, `site-config.example.json`, `.scripts/build-static.php`, `README.md`.
+
+---
+
 ## 2026-08-19 — GitHub account rename: alexmorganunfiltered
 
 **Change:** Updated push target and Pages URLs from `migrantsdiary` to [alexmorganunfiltered/facebook](https://github.com/alexmorganunfiltered/facebook). Live site: https://alexmorganunfiltered.github.io/facebook/ . `push_to_github.sh` reads `alexmorganunfiltered=` token (falls back to `migrantsdiary=`).

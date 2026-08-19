@@ -100,10 +100,35 @@ function aswproject_load_content_json(string $filename): array
     return is_array($data) ? $data : [];
 }
 
-function aswproject_is_static_build(): bool
+function aswproject_site_brand_name(array $site = []): string
 {
-    return getenv('ASWPROJECT_STATIC_BUILD') === '1';
+    if ($site === []) {
+        $site = aswproject_load_site_config();
+    }
+
+    $title = trim((string) ($site['site_title'] ?? 'Alex Morgan Unfiltered'));
+    $subtitle = trim((string) ($site['site_subtitle'] ?? ''));
+
+    if ($subtitle === '') {
+        return $title;
+    }
+
+    if (stripos($title, $subtitle) !== false) {
+        return $title;
+    }
+
+    return trim($title . ' ' . $subtitle);
 }
+
+function aswproject_site_logo_href(array $site = []): string
+{
+    if ($site === []) {
+        $site = aswproject_load_site_config();
+    }
+
+    return trim((string) ($site['site_logo'] ?? ''));
+}
+
 
 function aswproject_policy_comparison_href(): string
 {

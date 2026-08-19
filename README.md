@@ -1,4 +1,4 @@
-# Alex Morgan — Unfiltered
+# Alex Morgan Unfiltered
 
 Standalone **public** personal site — **100% self-contained** in this directory (CSS, fonts, content).
 

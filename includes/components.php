@@ -30,22 +30,20 @@ function aswproject_render_lang_switcher(): void
 function aswproject_render_site_header(string $currentPage = ''): void
 {
     $site = aswproject_load_site_config();
-    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
-    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
-    $siteLogo = trim((string) ($site['site_logo'] ?? ''));
+    $siteBrand = aswproject_site_brand_name($site);
+    $siteLogo = aswproject_site_logo_href($site);
     $homeHref = aswproject_page_href('home');
-    $brandLabel = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
+    $logoOnly = $siteLogo !== '';
+    $brandClass = 'amd-header__brand-link' . ($logoOnly ? ' amd-header__brand-link--logo-only' : '');
     ?>
     <header class="amd-header">
       <div class="amd-header__top">
         <div class="amd-header__brand-wrap">
-          <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
+          <a class="<?= aswproject_escape($brandClass) ?>" href="<?= aswproject_escape($homeHref) ?>">
 <?php if ($siteLogo !== ''): ?>
-            <img class="amd-header__logo" src="<?= aswproject_escape($siteLogo) ?>" alt="<?= aswproject_escape($brandLabel) ?>" width="160" height="48">
-<?php endif; ?>
-            <span class="amd-header__brand"><?= aswproject_escape($siteTitle) ?></span>
-<?php if ($siteSubtitle !== ''): ?>
-            <span class="amd-header__subtitle"><?= aswproject_escape($siteSubtitle) ?></span>
+            <img class="amd-header__logo" src="<?= aswproject_escape($siteLogo) ?>" alt="<?= aswproject_escape($siteBrand) ?>" width="220" height="56">
+<?php else: ?>
+            <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
 <?php endif; ?>
           </a>
         </div>
@@ -78,9 +76,7 @@ function aswproject_render_site_header(string $currentPage = ''): void
 function aswproject_render_site_footer(): void
 {
     $site = aswproject_load_site_config();
-    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
-    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
-    $siteBrand = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
+    $siteBrand = aswproject_site_brand_name($site);
     $year = date('Y');
     ?>
     <footer class="amd-footer">
@@ -281,9 +277,7 @@ function aswproject_render_news_cards(array $articles): void
     $tag = trim((string) ($article['tag'] ?? 'Article'));
     $image = trim((string) ($article['image'] ?? ''));
     $site = aswproject_load_site_config();
-    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
-    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
-    $cardMark = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
+    $cardMark = aswproject_site_brand_name($site);
 ?>
       <a class="amd-news-card" href="<?= aswproject_escape($href) ?>">
 <?php if ($image !== ''): ?>

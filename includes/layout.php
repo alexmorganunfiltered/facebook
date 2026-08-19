@@ -10,15 +10,13 @@ require_once __DIR__ . '/components.php';
 function aswproject_render_page_start(array $page): void
 {
     $site = aswproject_load_site_config();
-    $title = trim((string) ($page['title'] ?? 'Alex Morgan — Unfiltered'));
+    $title = trim((string) ($page['title'] ?? 'Alex Morgan Unfiltered'));
     $description = trim((string) ($page['description'] ?? ''));
     $canonical = trim((string) ($page['canonical'] ?? ''));
-    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
-    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
-    $fullSiteName = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
+    $siteBrand = aswproject_site_brand_name($site);
     $currentPage = trim((string) ($page['current'] ?? ''));
 
-    $fullTitle = ($title === $fullSiteName || $title === $siteTitle) ? $title : $title . ' — ' . $fullSiteName;
+    $fullTitle = ($title === $siteBrand) ? $title : $title . ' — ' . $siteBrand;
     ?>
 <!DOCTYPE html>
 <html lang="en">
