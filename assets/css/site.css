@@ -62,6 +62,48 @@ body.amd-page {
 }
 
 /* Header & navigation */
+.amd-site-header {
+  margin-bottom: 24px;
+  background: var(--amd-card-bg);
+  border-bottom: 2px solid var(--amd-text);
+}
+
+.amd-banner {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  background: #fff;
+  text-decoration: none;
+}
+
+.amd-banner:hover,
+.amd-banner:focus {
+  text-decoration: none;
+}
+
+.amd-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.amd-shell--header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.amd-header__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 12px 0;
+}
+
 .amd-header {
   background: var(--amd-card-bg);
   border-bottom: 2px solid var(--amd-text);
@@ -83,6 +125,19 @@ body.amd-page {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.amd-site-intro {
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.amd-site-intro__text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--amd-text);
+  max-width: 52em;
 }
 
 /* Language switcher */

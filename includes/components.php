@@ -10,7 +10,6 @@ function aswproject_nav_items(): array
 {
     return [
         ['id' => 'home', 'label' => 'Home', 'label_si' => 'මුල් පිටුව'],
-        ['id' => 'articles', 'label' => 'Articles', 'label_si' => 'ලිපi'],
         ['id' => 'policy-comparison', 'label' => 'Policy comparisons', 'label_si' => 'ප්‍රතිපත්ති සංසන්ධන'],
         ['id' => 'australia-explained', 'label' => 'Australia explained', 'label_si' => 'ඕස්ට්‍රේලියාව පැහැදිලි කිරීම'],
         ['id' => 'about', 'label' => 'About', 'label_si' => 'About'],
@@ -31,27 +30,26 @@ function aswproject_render_site_header(string $currentPage = ''): void
 {
     $site = aswproject_load_site_config();
     $siteBrand = aswproject_site_brand_name($site);
-    $siteLogo = aswproject_site_logo_href($site);
+    $siteBanner = aswproject_site_banner_href($site);
     $homeHref = aswproject_page_href('home');
-    $logoOnly = $siteLogo !== '';
-    $brandClass = 'amd-header__brand-link' . ($logoOnly ? ' amd-header__brand-link--logo-only' : '');
     ?>
-    <header class="amd-header">
-      <div class="amd-header__top">
-        <div class="amd-header__brand-wrap">
-          <a class="<?= aswproject_escape($brandClass) ?>" href="<?= aswproject_escape($homeHref) ?>">
-<?php if ($siteLogo !== ''): ?>
-            <img class="amd-header__logo" src="<?= aswproject_escape($siteLogo) ?>" alt="<?= aswproject_escape($siteBrand) ?>" width="220" height="56">
+    <header class="amd-site-header">
+<?php if ($siteBanner !== ''): ?>
+      <a class="amd-banner" href="<?= aswproject_escape($homeHref) ?>">
+        <img class="amd-banner__img" src="<?= aswproject_escape($siteBanner) ?>" alt="<?= aswproject_escape($siteBrand) ?>" width="1200" height="220">
+      </a>
 <?php else: ?>
-            <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
+      <div class="amd-shell amd-shell--header">
+        <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
+          <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
+        </a>
+      </div>
 <?php endif; ?>
-          </a>
-        </div>
-        <div class="amd-header__actions">
+      <div class="amd-shell amd-shell--header">
+        <div class="amd-header__bar">
           <?php aswproject_render_lang_switcher(); ?>
           <?php aswproject_render_social_links('amd-header__social'); ?>
         </div>
-      </div>
       <nav class="amd-nav" aria-label="Main navigation">
         <ul class="amd-nav__list">
 <?php foreach (aswproject_nav_items() as $item): ?>
@@ -69,6 +67,7 @@ function aswproject_render_site_header(string $currentPage = ''): void
 <?php endforeach; ?>
         </ul>
       </nav>
+      </div>
     </header>
 <?php
 }
@@ -235,16 +234,22 @@ function aswproject_filter_published_articles(array $articles): array
     return $published;
 }
 
+function aswproject_render_site_intro(string $text): void
+{
+    $text = trim($text);
+    if ($text === '') {
+        return;
+    }
+    ?>
+    <section class="amd-site-intro" aria-label="About this site">
+      <p class="amd-site-intro__text"><?= aswproject_escape($text) ?></p>
+    </section>
+<?php
+}
+
 function aswproject_render_articles_index_heading(): void
 {
-    ?>
-    <header class="amd-articles-index">
-      <p class="amd-articles-index__eyebrow" lang="en">News &amp; reads</p>
-      <p class="amd-articles-index__eyebrow" lang="si">පුවත් &amp; ලිපi</p>
-      <h1 class="amd-articles-index__title" lang="en">Articles</h1>
-      <h1 class="amd-articles-index__title amd-articles-index__title--si" lang="si">ලිපi</h1>
-    </header>
-<?php
+    // Legacy no-op — home page uses site intro instead.
 }
 
 /**

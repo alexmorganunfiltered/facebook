@@ -118,23 +118,30 @@ build_static_copy_tree($root . '/content', $out . '/content');
 copy($root . '/site-config.json', $out . '/site-config.json');
 copy($root . '/404.html', $out . '/404.html');
 
-$indexHtml = '<!DOCTYPE html>
+$indexHtml = build_static_render_to_string(static function () use ($root): void {
+    require_once $root . '/includes/homeArticles.php';
+    aswproject_render_home_articles_page();
+});
+
+build_static_write($out . '/index.html', $indexHtml);
+
+$articlesRedirectHtml = '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Redirecting…</title>
-  <meta http-equiv="refresh" content="0;url=' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">
+  <meta http-equiv="refresh" content="0;url=index.html">
+  <link rel="canonical" href="index.html">
   <meta name="robots" content="noindex">
-  <link rel="canonical" href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">
 </head>
 <body>
-  <p>Redirecting to <a href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">Alex Morgan Unfiltered on Facebook</a>…</p>
-  <script>window.location.replace(' . json_encode($facebookUrl, JSON_UNESCAPED_SLASHES) . ');</script>
+  <p>Redirecting to <a href="index.html">home</a>…</p>
+  <script>window.location.replace("index.html");</script>
 </body>
 </html>';
 
-build_static_write($out . '/index.html', $indexHtml);
+build_static_write($out . '/articles.html', $articlesRedirectHtml);
 
 /**
  * @return list<array{file: string, renderer: callable(): void}>
@@ -144,12 +151,6 @@ $pages = [
         'file' => 'inflation-is-taxation.html',
         'renderer' => static function () use ($root): void {
             require_once $root . '/inflation-is-taxation.php';
-        },
-    ],
-    [
-        'file' => 'articles.html',
-        'renderer' => static function () use ($root): void {
-            require $root . '/articles.php';
         },
     ],
     [
@@ -178,7 +179,8 @@ foreach ($pages as $page) {
 }
 
 fwrite(STDOUT, "Static site written to _site/\n");
-fwrite(STDOUT, "  index.html -> Facebook redirect\n");
+fwrite(STDOUT, "  index.html (home / articles)\n");
+fwrite(STDOUT, "  articles.html -> index.html redirect\n");
 foreach ($pages as $page) {
     fwrite(STDOUT, '  ' . $page['file'] . "\n");
 }

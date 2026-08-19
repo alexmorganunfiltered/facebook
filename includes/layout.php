@@ -60,8 +60,8 @@ function aswproject_render_page_start(array $page): void
   </script>
 </head>
 <body class="amd-page">
+  <?php aswproject_render_site_header($currentPage); ?>
   <div class="amd-shell">
-    <?php aswproject_render_site_header($currentPage); ?>
     <main class="amd-main">
 <?php
 }

@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Home page articles, full-width banner, site intro
+
+**Change:** Home (`index.php` / `index.html`) is now the articles page with a full-width logo banner, site description between the nav and article cards, and Facebook button linking to the Facebook page. Removed duplicate Articles nav item; `articles.php` / `articles.html` redirect to home.
+
+**Files touched:** `index.php`, `articles.php`, `includes/homeArticles.php`, `includes/layout.php`, `includes/components.php`, `includes/siteHelpers.php`, `content/articles.json`, `assets/css/site.css`, `assets/css/site-mobile.css`, `.scripts/build-static.php`.
+
+---
+
 ## 2026-08-19 — Fix GitHub Actions build (missing aswproject_is_static_build)
 
 **Issue:** Deploy failed — `Call to undefined function aswproject_is_static_build()` in `siteHelpers.php` (accidentally removed when adding brand helpers).

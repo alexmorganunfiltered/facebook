@@ -134,6 +134,20 @@ function aswproject_site_logo_href(array $site = []): string
     return trim((string) ($site['site_logo'] ?? ''));
 }
 
+function aswproject_site_banner_href(array $site = []): string
+{
+    if ($site === []) {
+        $site = aswproject_load_site_config();
+    }
+
+    $banner = trim((string) ($site['site_banner'] ?? ''));
+    if ($banner !== '') {
+        return $banner;
+    }
+
+    return aswproject_site_logo_href($site);
+}
+
 
 function aswproject_policy_comparison_href(): string
 {
@@ -185,7 +199,7 @@ function aswproject_page_href(string $pageId): string
 
     $map = [
         'home' => $static ? 'index.html' : 'index.php',
-        'articles' => $static ? 'articles.html' : 'articles.php',
+        'articles' => $static ? 'index.html' : 'index.php',
         'policy-comparison' => $static ? 'policy-comparison.html' : 'policy-comparison.php',
         'australia-explained' => $static ? 'australia-explained.html' : 'australia-explained.php',
         'about' => $static ? 'about.html' : 'about.php',
