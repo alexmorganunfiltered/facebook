@@ -110,6 +110,45 @@ function aswproject_policy_comparison_href(): string
     return aswproject_page_href('policy-comparison');
 }
 
+function aswproject_article_href(string $slug): string
+{
+    $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($slug));
+
+    return aswproject_is_static_build() ? $slug . '.html' : $slug . '.php';
+}
+
+function aswproject_article_canonical(string $slug): string
+{
+    $base = aswproject_site_base_url();
+    if ($base === '') {
+        return '';
+    }
+
+    return aswproject_page_url(aswproject_article_href($slug));
+}
+
+/**
+ * @return list<string>
+ */
+function aswproject_known_page_ids(): array
+{
+    return ['home', 'articles', 'policy-comparison', 'australia-explained', 'about'];
+}
+
+function aswproject_resolve_content_href(string $key): string
+{
+    $key = trim($key);
+    if ($key === '') {
+        return '#';
+    }
+
+    if (in_array($key, aswproject_known_page_ids(), true)) {
+        return aswproject_page_href($key);
+    }
+
+    return aswproject_article_href($key);
+}
+
 function aswproject_page_href(string $pageId): string
 {
     $static = aswproject_is_static_build();

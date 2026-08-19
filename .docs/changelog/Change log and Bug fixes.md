@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Inflation article page and article images
+
+**Change:** Added full article page “Inflation is taxation without legislation” (`inflation-is-taxation.php` / `.html`) with JSON-driven body copy from the Facebook post. Reusable `aswproject_render_full_article()` supports optional `hero_image` and inline `images` after paragraph indices. Listed on Articles index.
+
+**Files touched:** `content/inflation-is-taxation.json`, `content/articles.json`, `inflation-is-taxation.php`, `includes/components.php`, `includes/siteHelpers.php`, `assets/css/site.css`, `.scripts/build-static.php`, `assets/images/articles/README.md`, `README.md`.
+
+---
+
 ## 2026-08-07 — Home page reverted to Facebook redirect
 
 **Change:** Removed editorial landing content from home. `index.php` and static `index.html` again redirect to the Facebook page. Other pages (articles, policy comparison, etc.) unchanged.

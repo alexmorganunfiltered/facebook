@@ -141,6 +141,12 @@ build_static_write($out . '/index.html', $indexHtml);
  */
 $pages = [
     [
+        'file' => 'inflation-is-taxation.html',
+        'renderer' => static function () use ($root): void {
+            require_once $root . '/inflation-is-taxation.php';
+        },
+    ],
+    [
         'file' => 'articles.html',
         'renderer' => static function () use ($root): void {
             require $root . '/articles.php';

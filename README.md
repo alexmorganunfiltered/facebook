@@ -23,6 +23,13 @@ Standalone **public** personal site — **100% self-contained** in this director
 | `policy-comparison.php` | `policy-comparison.html` | One Nation / Labor / Coalition comparison |
 | `australia-explained.php` | `australia-explained.html` | Systems newcomers ask about |
 | `about.php` | `about.html` | About this project |
+| `inflation-is-taxation.php` | `inflation-is-taxation.html` | Inflation is taxation without legislation |
+
+---
+
+## Article images
+
+Yes — add images to any article page. Put files under `assets/images/articles/` and reference them in the article JSON (`hero_image` or `images` array). See `assets/images/articles/README.md`.
 
 ---
 

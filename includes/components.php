@@ -217,7 +217,7 @@ function aswproject_render_article_cards(array $articles): void
     $date = trim((string) ($article['date'] ?? ''));
     $status = trim((string) ($article['status'] ?? 'published'));
     $hrefKey = trim((string) ($article['href'] ?? ''));
-    $href = $hrefKey !== '' ? aswproject_page_href($hrefKey) : '#';
+    $href = aswproject_resolve_content_href($hrefKey);
     $isSoon = $status === 'coming_soon';
 ?>
       <article class="amd-article-card">
@@ -473,4 +473,127 @@ function aswproject_render_policy_comparison(array $content): void
 function aswproject_render_content_table(array $content): void
 {
     aswproject_render_policy_comparison($content);
+}
+
+/**
+ * @param array<string, mixed>|null $image
+ */
+function aswproject_render_article_figure(?array $image): void
+{
+    if (!is_array($image)) {
+        return;
+    }
+
+    $src = trim((string) ($image['src'] ?? ''));
+    $alt = trim((string) ($image['alt'] ?? ''));
+    $caption = trim((string) ($image['caption'] ?? ''));
+
+    if ($src === '') {
+        return;
+    }
+
+    if ($alt === '') {
+        $alt = 'Article illustration';
+    }
+    ?>
+    <figure class="amd-article-figure">
+      <img class="amd-article-figure__img" src="<?= aswproject_escape($src) ?>" alt="<?= aswproject_escape($alt) ?>" loading="lazy" decoding="async">
+<?php if ($caption !== ''): ?>
+      <figcaption class="amd-article-figure__caption"><?= aswproject_escape($caption) ?></figcaption>
+<?php endif; ?>
+    </figure>
+<?php
+}
+
+/**
+ * @param array<string, mixed> $article
+ */
+function aswproject_render_full_article(array $article): void
+{
+    $pageTitle = trim((string) ($article['page_title'] ?? ''));
+    $headline = trim((string) ($article['headline'] ?? $pageTitle));
+    $eyebrow = trim((string) ($article['eyebrow'] ?? 'Article'));
+    $published = trim((string) ($article['published'] ?? ''));
+    $paragraphs = $article['paragraphs'] ?? [];
+    $images = $article['images'] ?? [];
+    $heroImage = $article['hero_image'] ?? null;
+
+    if (!is_array($paragraphs)) {
+        $paragraphs = [];
+    }
+
+    $imagesByParagraph = [];
+    if (is_array($images)) {
+        foreach ($images as $image) {
+            if (!is_array($image)) {
+                continue;
+            }
+            $index = (int) ($image['after_paragraph'] ?? -1);
+            if ($index < 0) {
+                continue;
+            }
+            if (!isset($imagesByParagraph[$index])) {
+                $imagesByParagraph[$index] = [];
+            }
+            $imagesByParagraph[$index][] = $image;
+        }
+    }
+    ?>
+    <article class="amd-article">
+      <header class="amd-article__header">
+<?php if ($eyebrow !== ''): ?>
+        <p class="amd-article__eyebrow"><?= aswproject_escape($eyebrow) ?></p>
+<?php endif; ?>
+        <h1 class="amd-article__title" lang="en"><?= aswproject_escape($headline) ?></h1>
+<?php if ($pageTitle !== '' && $pageTitle !== $headline): ?>
+        <p class="amd-article__subtitle" lang="en"><?= aswproject_escape($pageTitle) ?></p>
+<?php endif; ?>
+<?php if ($published !== ''): ?>
+        <p class="amd-article__meta"><time datetime="<?= aswproject_escape($published) ?>"><?= aswproject_escape($published) ?></time></p>
+<?php endif; ?>
+      </header>
+<?php
+    if (is_array($heroImage)) {
+        aswproject_render_article_figure($heroImage);
+    }
+?>
+      <div class="amd-article__body" lang="en">
+<?php
+    foreach ($paragraphs as $index => $block) {
+        if (!is_array($block)) {
+            $text = trim(is_scalar($block) ? (string) $block : '');
+            if ($text === '') {
+                continue;
+            }
+            echo '<p class="amd-article__p">' . aswproject_escape($text) . '</p>';
+        } else {
+            $text = trim((string) ($block['text'] ?? ''));
+            if ($text === '') {
+                continue;
+            }
+            $style = trim((string) ($block['style'] ?? ''));
+            $class = 'amd-article__p';
+            if ($style === 'standout') {
+                $class .= ' amd-article__p--standout';
+            } elseif ($style === 'closing') {
+                $class .= ' amd-article__p--closing';
+            }
+            echo '<p class="' . aswproject_escape($class) . '">' . aswproject_escape($text) . '</p>';
+        }
+
+        if (isset($imagesByParagraph[$index]) && is_array($imagesByParagraph[$index])) {
+            foreach ($imagesByParagraph[$index] as $image) {
+                if (is_array($image)) {
+                    aswproject_render_article_figure($image);
+                }
+            }
+        }
+    }
+?>
+      </div>
+      <p class="amd-article__back">
+        <a class="amd-text-link" href="<?= aswproject_escape(aswproject_page_href('articles')) ?>"><span lang="en">← All articles</span><span lang="si">← සියලු ලිපi</span></a>
+      </p>
+    </article>
+<?php
 }

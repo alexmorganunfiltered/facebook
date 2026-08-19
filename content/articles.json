@@ -9,6 +9,16 @@
   },
   "articles": [
     {
+      "slug": "inflation-is-taxation",
+      "title": "Inflation is taxation without legislation",
+      "title_si": "Inflation is taxation without legislation",
+      "excerpt": "Inflation is just a tax — on government borrowing, bonds, and how purchasing power disappears without a vote.",
+      "excerpt_si": "Inflation is just a tax — government borrowing, bonds, සහ purchasing power vote එකකින් තොරව disappear වන ආකාරය.",
+      "date": "2026-08-19",
+      "href": "inflation-is-taxation",
+      "status": "published"
+    },
+    {
       "slug": "how-to-read-policy-comparisons",
       "title": "How to read a policy comparison table",
       "title_si": "ප්‍රතිපත්ති සංසන්ධන table එකක් කියවන්නේ කෙසේද",
