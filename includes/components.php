@@ -34,39 +34,37 @@ function aswproject_render_site_header(string $currentPage = ''): void
     $homeHref = aswproject_page_href('home');
     ?>
     <header class="amd-site-header">
-<?php if ($siteBanner !== ''): ?>
-      <a class="amd-banner" href="<?= aswproject_escape($homeHref) ?>">
-        <img class="amd-banner__img" src="<?= aswproject_escape($siteBanner) ?>" alt="<?= aswproject_escape($siteBrand) ?>" width="1200" height="220">
-      </a>
-<?php else: ?>
       <div class="amd-shell amd-shell--header">
-        <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
-          <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
-        </a>
-      </div>
-<?php endif; ?>
-      <div class="amd-shell amd-shell--header">
-        <div class="amd-header__bar">
+        <div class="amd-header__utility">
           <?php aswproject_render_lang_switcher(); ?>
           <?php aswproject_render_social_links('amd-header__social'); ?>
         </div>
-      <nav class="amd-nav" aria-label="Main navigation">
-        <ul class="amd-nav__list">
+<?php if ($siteBanner !== ''): ?>
+        <a class="amd-banner" href="<?= aswproject_escape($homeHref) ?>">
+          <img class="amd-banner__img" src="<?= aswproject_escape($siteBanner) ?>" alt="<?= aswproject_escape($siteBrand) ?>" width="720" height="160">
+        </a>
+<?php else: ?>
+        <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
+          <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
+        </a>
+<?php endif; ?>
+        <nav class="amd-nav" aria-label="Main navigation">
+          <ul class="amd-nav__list">
 <?php foreach (aswproject_nav_items() as $item): ?>
 <?php
     $isCurrent = $currentPage === $item['id'];
     $href = aswproject_page_href($item['id']);
     $classes = 'amd-nav__link' . ($isCurrent ? ' amd-nav__link--current' : '');
 ?>
-          <li class="amd-nav__item">
-            <a class="<?= aswproject_escape($classes) ?>" href="<?= aswproject_escape($href) ?>"<?= $isCurrent ? ' aria-current="page"' : '' ?>>
-              <span class="amd-nav__label" lang="en"><?= aswproject_escape($item['label']) ?></span>
-              <span class="amd-nav__label" lang="si"><?= aswproject_escape($item['label_si']) ?></span>
-            </a>
-          </li>
+            <li class="amd-nav__item">
+              <a class="<?= aswproject_escape($classes) ?>" href="<?= aswproject_escape($href) ?>"<?= $isCurrent ? ' aria-current="page"' : '' ?>>
+                <span class="amd-nav__label" lang="en"><?= aswproject_escape($item['label']) ?></span>
+                <span class="amd-nav__label" lang="si"><?= aswproject_escape($item['label_si']) ?></span>
+              </a>
+            </li>
 <?php endforeach; ?>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
       </div>
     </header>
 <?php

@@ -4,23 +4,21 @@
 
 @media screen and (max-width: 768px) {
   .amd-shell {
-    width: 94%;
+    width: 92%;
     padding-top: 12px;
   }
 
-  .amd-header__top {
-    flex-direction: column;
-    padding-top: 12px;
+  .amd-header__utility {
+    justify-content: space-between;
+    padding: 6px 0 8px;
+  }
+
+  .amd-banner {
+    padding: 14px 0 10px;
   }
 
   .amd-banner__img {
-    max-height: 140px;
-  }
-
-  .amd-header__bar {
-    width: 100%;
-    justify-content: space-between;
-    padding: 10px 0;
+    max-height: 110px;
   }
 
   .amd-site-intro__text {

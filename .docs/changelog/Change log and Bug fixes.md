@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Header layout: centered logo, 70% width, top utility bar
+
+**Change:** Language switcher and Facebook link moved to the very top of the header. Logo banner is centered with natural proportions (no stretch/crop). Site content width set to 70% of the viewport (92% on mobile), max 1200px.
+
+**Files touched:** `includes/components.php`, `assets/css/site.css`, `assets/css/site-mobile.css`.
+
+---
+
 ## 2026-08-19 — Home page articles, full-width banner, site intro
 
 **Change:** Home (`index.php` / `index.html`) is now the articles page with a full-width logo banner, site description between the nav and article cards, and Facebook button linking to the Facebook page. Removed duplicate Articles nav item; `articles.php` / `articles.html` redirect to home.
