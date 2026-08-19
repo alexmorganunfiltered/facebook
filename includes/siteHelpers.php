@@ -100,6 +100,11 @@ function aswproject_load_content_json(string $filename): array
     return is_array($data) ? $data : [];
 }
 
+function aswproject_is_static_build(): bool
+{
+    return getenv('ASWPROJECT_STATIC_BUILD') === '1';
+}
+
 function aswproject_site_brand_name(array $site = []): string
 {
     if ($site === []) {

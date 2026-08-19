@@ -1,5 +1,15 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Fix GitHub Actions build (missing aswproject_is_static_build)
+
+**Issue:** Deploy failed — `Call to undefined function aswproject_is_static_build()` in `siteHelpers.php` (accidentally removed when adding brand helpers).
+
+**Fix:** Restored `aswproject_is_static_build()`.
+
+**Files touched:** `includes/siteHelpers.php`.
+
+---
+
 ## 2026-08-19 — Logo fix and site name Alex Morgan Unfiltered
 
 **Issue:** Logo uploaded to GitHub (`assets/images/logo.jpg`) but live `site-config.json` still had `"site_logo": ""`, so header showed text only.
