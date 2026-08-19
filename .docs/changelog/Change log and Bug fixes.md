@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Trim main navigation to Home only
+
+**Change:** Removed Policy comparisons, Australia explained, and About from the header menu. Nav is hidden on the home page (logo already links home); article pages show a single **Home** link. Article back link updated to match.
+
+**Files touched:** `includes/components.php`, `inflation-is-taxation.php`.
+
+---
+
 ## 2026-08-19 — Header layout: centered logo, 70% width, top utility bar
 
 **Change:** Language switcher and Facebook link moved to the very top of the header. Logo banner is centered with natural proportions (no stretch/crop). Site content width set to 70% of the viewport (92% on mobile), max 1200px.

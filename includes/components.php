@@ -10,9 +10,6 @@ function aswproject_nav_items(): array
 {
     return [
         ['id' => 'home', 'label' => 'Home', 'label_si' => 'මුල් පිටුව'],
-        ['id' => 'policy-comparison', 'label' => 'Policy comparisons', 'label_si' => 'ප්‍රතිපත්ති සංසන්ධන'],
-        ['id' => 'australia-explained', 'label' => 'Australia explained', 'label_si' => 'ඕස්ට්‍රේලියාව පැහැදිලි කිරීම'],
-        ['id' => 'about', 'label' => 'About', 'label_si' => 'About'],
     ];
 }
 
@@ -32,6 +29,8 @@ function aswproject_render_site_header(string $currentPage = ''): void
     $siteBrand = aswproject_site_brand_name($site);
     $siteBanner = aswproject_site_banner_href($site);
     $homeHref = aswproject_page_href('home');
+    $navItems = aswproject_nav_items();
+    $showNav = $navItems !== [] && !($currentPage === 'home' && count($navItems) === 1);
     ?>
     <header class="amd-site-header">
       <div class="amd-shell amd-shell--header">
@@ -48,9 +47,10 @@ function aswproject_render_site_header(string $currentPage = ''): void
           <span class="amd-header__brand"><?= aswproject_escape($siteBrand) ?></span>
         </a>
 <?php endif; ?>
+<?php if ($showNav): ?>
         <nav class="amd-nav" aria-label="Main navigation">
           <ul class="amd-nav__list">
-<?php foreach (aswproject_nav_items() as $item): ?>
+<?php foreach ($navItems as $item): ?>
 <?php
     $isCurrent = $currentPage === $item['id'];
     $href = aswproject_page_href($item['id']);
@@ -65,6 +65,7 @@ function aswproject_render_site_header(string $currentPage = ''): void
 <?php endforeach; ?>
           </ul>
         </nav>
+<?php endif; ?>
       </div>
     </header>
 <?php
@@ -669,7 +670,7 @@ function aswproject_render_full_article(array $article): void
 ?>
       </div>
       <p class="amd-article__back">
-        <a class="amd-text-link" href="<?= aswproject_escape(aswproject_page_href('articles')) ?>"><span lang="en">← All articles</span><span lang="si">← සියලු ලිපi</span></a>
+        <a class="amd-text-link" href="<?= aswproject_escape(aswproject_page_href('home')) ?>"><span lang="en">← Home</span><span lang="si">← මුල් පිටුව</span></a>
       </p>
     </article>
 <?php

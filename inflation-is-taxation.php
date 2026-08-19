@@ -10,7 +10,7 @@ aswproject_render_page_start([
     'title' => $pageTitle,
     'description' => trim((string) ($content['meta_description'] ?? '')),
     'canonical' => aswproject_article_canonical('inflation-is-taxation'),
-    'current' => 'articles',
+    'current' => '',
 ]);
 
 aswproject_render_full_article($content);
