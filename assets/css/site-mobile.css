@@ -54,8 +54,17 @@
 
   .amd-card-grid,
   .amd-card-grid--policy,
-  .amd-topic-grid {
+  .amd-topic-grid,
+  .amd-news-grid {
     grid-template-columns: 1fr;
+  }
+
+  .amd-articles-index__title {
+    font-size: 28px;
+  }
+
+  .amd-news-card__title {
+    font-size: 19px;
   }
 
   /* Hide horizontal table; show stacked policy cards */

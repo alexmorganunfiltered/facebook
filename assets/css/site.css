@@ -865,3 +865,178 @@ table.amd-table thead th p.amd-cell-block--spaced {
   padding-top: 16px;
   border-top: 1px solid var(--amd-border);
 }
+
+/* Articles index */
+.amd-articles-index {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--amd-text);
+}
+
+.amd-articles-index__eyebrow {
+  margin: 0 0 6px;
+  color: var(--amd-accent-red);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.amd-articles-index__title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--amd-text);
+}
+
+html[data-lang="si"] .amd-articles-index__title--si {
+  font-family: var(--amd-font-si);
+  font-size: 30px;
+}
+
+.amd-news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.amd-news-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border: 1px solid var(--amd-border);
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.amd-news-card:hover,
+.amd-news-card:focus {
+  border-color: var(--amd-accent);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.amd-news-card__media {
+  aspect-ratio: 16 / 9;
+  background: #f3f5f8;
+  border-bottom: 1px solid var(--amd-border);
+  overflow: hidden;
+}
+
+.amd-news-card__media--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f7;
+}
+
+.amd-news-card__mark {
+  padding: 0 16px;
+  color: var(--amd-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.amd-news-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amd-news-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 18px 20px;
+  border-top: 3px solid var(--amd-accent-red);
+}
+
+.amd-news-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.amd-news-card__date {
+  color: var(--amd-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.amd-news-card__tag {
+  padding: 2px 8px;
+  border: 1px solid var(--amd-border);
+  color: var(--amd-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.amd-news-card__title {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--amd-text);
+}
+
+.amd-news-card__title-si {
+  margin: 0;
+  font-family: var(--amd-font-si);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--amd-accent);
+}
+
+html[data-lang="si"] .amd-news-card__title-si {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--amd-text);
+}
+
+.amd-news-card__excerpt {
+  margin: 0;
+  flex: 1;
+  color: var(--amd-text-muted);
+  font-size: 15px;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.amd-news-card__excerpt--si {
+  font-family: var(--amd-font-si);
+}
+
+.amd-news-card__cta {
+  margin-top: 4px;
+  color: var(--amd-accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.amd-news-card:hover .amd-news-card__cta,
+.amd-news-card:focus .amd-news-card__cta {
+  color: var(--amd-accent-red);
+}
+
+.amd-news-card__cta span::after {
+  content: " →";
+}

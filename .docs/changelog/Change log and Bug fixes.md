@@ -1,5 +1,13 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — Articles index news cards redesign
+
+**Change:** Articles page is now a clean news-card grid only — removed hero intro, My thoughts, and coming-soon placeholders. Published articles render as clickable cards with date, tag, excerpt, and optional thumbnail (`image` in JSON).
+
+**Files touched:** `articles.php`, `content/articles.json`, `includes/components.php`, `assets/css/site.css`, `assets/css/site-mobile.css`.
+
+---
+
 ## 2026-08-19 — Inflation article page and article images
 
 **Change:** Added full article page “Inflation is taxation without legislation” (`inflation-is-taxation.php` / `.html`) with JSON-driven body copy from the Facebook post. Reusable `aswproject_render_full_article()` supports optional `hero_image` and inline `images` after paragraph indices. Listed on Articles index.

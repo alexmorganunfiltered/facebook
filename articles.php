@@ -12,15 +12,11 @@ aswproject_render_page_start([
     'current' => 'articles',
 ]);
 
-aswproject_render_hero($content['hero'] ?? []);
+aswproject_render_articles_index_heading();
 
 $articles = $content['articles'] ?? [];
 if (is_array($articles)) {
-    aswproject_render_article_cards($articles);
-}
-
-if (is_array($content['my_thoughts'] ?? null)) {
-    aswproject_render_my_thoughts($content['my_thoughts']);
+    aswproject_render_news_cards($articles);
 }
 
 aswproject_render_page_end();

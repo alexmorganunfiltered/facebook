@@ -193,18 +193,69 @@ function aswproject_render_social_links(string $wrapperClass = 'amd-social'): vo
 <?php
 }
 
+function aswproject_format_article_date(string $date): string
+{
+    $date = trim($date);
+    if ($date === '') {
+        return '';
+    }
+
+    $parsed = DateTimeImmutable::createFromFormat('Y-m-d', $date);
+    if ($parsed instanceof DateTimeImmutable) {
+        return $parsed->format('j M Y');
+    }
+
+    return $date;
+}
+
+/**
+ * @param list<array<string, mixed>> $articles
+ * @return list<array<string, mixed>>
+ */
+function aswproject_filter_published_articles(array $articles): array
+{
+    $published = [];
+
+    foreach ($articles as $article) {
+        if (!is_array($article)) {
+            continue;
+        }
+        $status = trim((string) ($article['status'] ?? 'published'));
+        if ($status === 'coming_soon') {
+            continue;
+        }
+        $published[] = $article;
+    }
+
+    return $published;
+}
+
+function aswproject_render_articles_index_heading(): void
+{
+    ?>
+    <header class="amd-articles-index">
+      <p class="amd-articles-index__eyebrow" lang="en">News &amp; reads</p>
+      <p class="amd-articles-index__eyebrow" lang="si">පුවත් &amp; ලිපi</p>
+      <h1 class="amd-articles-index__title" lang="en">Articles</h1>
+      <h1 class="amd-articles-index__title amd-articles-index__title--si" lang="si">ලිපi</h1>
+    </header>
+<?php
+}
+
 /**
  * @param list<array<string, mixed>> $articles
  */
-function aswproject_render_article_cards(array $articles): void
+function aswproject_render_news_cards(array $articles): void
 {
+    $articles = aswproject_filter_published_articles($articles);
+
     if ($articles === []) {
         echo '<p class="amd-empty" lang="en">No articles yet.</p>';
         echo '<p class="amd-empty" lang="si">තවම ලිපi නැත.</p>';
         return;
     }
     ?>
-    <div class="amd-card-grid">
+    <div class="amd-news-grid">
 <?php foreach ($articles as $article): ?>
 <?php
     if (!is_array($article)) {
@@ -214,38 +265,54 @@ function aswproject_render_article_cards(array $articles): void
     $titleSi = trim((string) ($article['title_si'] ?? ''));
     $excerpt = trim((string) ($article['excerpt'] ?? ''));
     $excerptSi = trim((string) ($article['excerpt_si'] ?? ''));
-    $date = trim((string) ($article['date'] ?? ''));
-    $status = trim((string) ($article['status'] ?? 'published'));
+    $dateRaw = trim((string) ($article['date'] ?? ''));
+    $dateDisplay = aswproject_format_article_date($dateRaw);
     $hrefKey = trim((string) ($article['href'] ?? ''));
     $href = aswproject_resolve_content_href($hrefKey);
-    $isSoon = $status === 'coming_soon';
+    $tag = trim((string) ($article['tag'] ?? 'Article'));
+    $image = trim((string) ($article['image'] ?? ''));
 ?>
-      <article class="amd-article-card">
-        <div class="amd-article-card__meta">
-<?php if ($date !== ''): ?>
-          <time datetime="<?= aswproject_escape($date) ?>"><?= aswproject_escape($date) ?></time>
-<?php elseif ($isSoon): ?>
-          <span class="amd-badge" lang="en">Coming soon</span>
-          <span class="amd-badge" lang="si">ඉක්මනින්</span>
-<?php endif; ?>
+      <a class="amd-news-card" href="<?= aswproject_escape($href) ?>">
+<?php if ($image !== ''): ?>
+        <div class="amd-news-card__media">
+          <img class="amd-news-card__img" src="<?= aswproject_escape($image) ?>" alt="" loading="lazy" decoding="async">
         </div>
-        <h2 class="amd-article-card__title" lang="en"><?= aswproject_escape($title) ?></h2>
+<?php else: ?>
+        <div class="amd-news-card__media amd-news-card__media--placeholder" aria-hidden="true">
+          <span class="amd-news-card__mark">A Migrant's Diary</span>
+        </div>
+<?php endif; ?>
+        <div class="amd-news-card__body">
+          <div class="amd-news-card__meta">
+<?php if ($dateDisplay !== ''): ?>
+            <time class="amd-news-card__date" datetime="<?= aswproject_escape($dateRaw) ?>"><?= aswproject_escape($dateDisplay) ?></time>
+<?php endif; ?>
+            <span class="amd-news-card__tag" lang="en"><?= aswproject_escape($tag) ?></span>
+          </div>
+          <h2 class="amd-news-card__title" lang="en"><?= aswproject_escape($title) ?></h2>
 <?php if ($titleSi !== ''): ?>
-        <p class="amd-article-card__title-si" lang="si"><?= aswproject_escape($titleSi) ?></p>
+          <p class="amd-news-card__title-si" lang="si"><?= aswproject_escape($titleSi) ?></p>
 <?php endif; ?>
 <?php if ($excerpt !== ''): ?>
-        <p class="amd-article-card__excerpt" lang="en"><?= aswproject_escape($excerpt) ?></p>
+          <p class="amd-news-card__excerpt" lang="en"><?= aswproject_escape($excerpt) ?></p>
 <?php endif; ?>
 <?php if ($excerptSi !== ''): ?>
-        <p class="amd-article-card__excerpt amd-article-card__excerpt--si" lang="si"><?= aswproject_escape($excerptSi) ?></p>
+          <p class="amd-news-card__excerpt amd-news-card__excerpt--si" lang="si"><?= aswproject_escape($excerptSi) ?></p>
 <?php endif; ?>
-<?php if (!$isSoon): ?>
-        <a class="amd-text-link" href="<?= aswproject_escape($href) ?>"><span lang="en">Read more</span><span lang="si">තව කියවන්න</span></a>
-<?php endif; ?>
-      </article>
+          <span class="amd-news-card__cta"><span lang="en">Read article</span><span lang="si">ලිපi කියවන්න</span></span>
+        </div>
+      </a>
 <?php endforeach; ?>
     </div>
 <?php
+}
+
+/**
+ * @param list<array<string, mixed>> $articles
+ */
+function aswproject_render_article_cards(array $articles): void
+{
+    aswproject_render_news_cards($articles);
 }
 
 /**
