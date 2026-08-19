@@ -129,7 +129,7 @@ $indexHtml = '<!DOCTYPE html>
   <link rel="canonical" href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">
 </head>
 <body>
-  <p>Redirecting to <a href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">A Migrant\'s Diary on Facebook</a>…</p>
+  <p>Redirecting to <a href="' . htmlspecialchars($facebookUrl, ENT_QUOTES, 'UTF-8') . '">Alex Morgan — Unfiltered on Facebook</a>…</p>
   <script>window.location.replace(' . json_encode($facebookUrl, JSON_UNESCAPED_SLASHES) . ');</script>
 </body>
 </html>';

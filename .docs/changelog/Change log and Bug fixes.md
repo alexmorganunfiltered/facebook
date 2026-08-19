@@ -1,5 +1,21 @@
 # Change log and Bug fixes — aswproject_dev
 
+## 2026-08-19 — GitHub account rename: alexmorganunfiltered
+
+**Change:** Updated push target and Pages URLs from `migrantsdiary` to [alexmorganunfiltered/facebook](https://github.com/alexmorganunfiltered/facebook). Live site: https://alexmorganunfiltered.github.io/facebook/ . `push_to_github.sh` reads `alexmorganunfiltered=` token (falls back to `migrantsdiary=`).
+
+**Files touched:** `push_to_github.sh`, `site-config.json`, `site-config.example.json`, `.docs/github-pages.md`, `README.md`.
+
+---
+
+## 2026-08-19 — Rebrand to Alex Morgan — Unfiltered; logo support
+
+**Change:** Site name updated to **Alex Morgan — Unfiltered** via `site-config.json` (`site_title`, `site_subtitle`). Optional header logo via `site_logo` path. Logo upload docs at `assets/images/README.md`.
+
+**Files touched:** `site-config.json`, `site-config.example.json`, `includes/components.php`, `includes/layout.php`, `assets/css/site.css`, `content/articles.json`, `.scripts/build-static.php`, `assets/images/README.md`, `README.md`.
+
+---
+
 ## 2026-08-19 — Articles index news cards redesign
 
 **Change:** Articles page is now a clean news-card grid only — removed hero intro, My thoughts, and coming-soon placeholders. Published articles render as clickable cards with date, tag, excerpt, and optional thumbnail (`image` in JSON).

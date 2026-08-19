@@ -1,5 +1,5 @@
 /**
- * A Migrant's Diary — editorial site theme.
+ * Alex Morgan — Unfiltered — editorial site theme.
  * Fonts: Inter (English), Noto Sans Sinhala (Sinhala), Figtree fallback.
  */
 
@@ -182,8 +182,20 @@ html[data-lang="si"] .amd-policy-card__label-si {
 }
 
 .amd-header__brand-link {
+  display: flex;
+  flex-direction: column;
   color: inherit;
   text-decoration: none;
+}
+
+.amd-header__logo {
+  display: block;
+  width: auto;
+  max-width: 200px;
+  height: 40px;
+  margin-bottom: 8px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .amd-header__brand-link:hover,

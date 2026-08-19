@@ -1,7 +1,7 @@
-# GitHub Pages — migrantsdiary/facebook
+# GitHub Pages — alexmorganunfiltered/facebook
 
-**Repo:** https://github.com/migrantsdiary/facebook  
-**Live URL (after first deploy):** https://migrantsdiary.github.io/facebook/
+**Repo:** https://github.com/alexmorganunfiltered/facebook  
+**Live URL (after deploy):** https://alexmorganunfiltered.github.io/facebook/
 
 Public repo · no authentication · GitHub Actions builds static HTML on push to `main`.
 
@@ -9,7 +9,7 @@ Public repo · no authentication · GitHub Actions builds static HTML on push to
 
 ## One-time GitHub setup
 
-1. Repo: [migrantsdiary/facebook](https://github.com/migrantsdiary/facebook) — code on `main`.
+1. Repo: [alexmorganunfiltered/facebook](https://github.com/alexmorganunfiltered/facebook) — code on `main`.
 2. **Enable Pages (required — deploy fails with 404 until this is done):**
    - **Settings → Pages**
    - **Build and deployment → Source:** choose **GitHub Actions** (not “Deploy from a branch”)
@@ -18,12 +18,11 @@ Public repo · no authentication · GitHub Actions builds static HTML on push to
    - **Read and write permissions** (allows `GITHUB_TOKEN` to publish Pages)
 4. Re-run the failed workflow: **Actions → Deploy GitHub Pages → Re-run all jobs**
 
-Live URL after success: **https://migrantsdiary.github.io/facebook/**
+Live URL after success: **https://alexmorganunfiltered.github.io/facebook/**
 
 ### If deploy still returns 404
 
 - Confirm step 2 says **GitHub Actions**, not a branch folder.
-- Org repo: **migrantsdiary** org settings may need **Pages** enabled for members.
 - PAT used for `git push` must include **`workflow`** scope (for pushing `.github/workflows/`).
 
 ---
@@ -37,20 +36,10 @@ cd /var/www/html/staffservices/custom/aswproject_dev
 ./push_to_github.sh "your commit message"
 ```
 
-Token: `/etc/webapp/config/.gitTokens` → `migrantsdiary=<PAT>`
+Token: `/etc/webapp/config/.gitTokens` → `alexmorganunfiltered=<PAT>`  
+(falls back to `migrantsdiary=<PAT>` if the old key is still present)
 
 **Do not** run `git push` from `/var/www/html/staffservices/custom/` — that is the school monorepo (~500MB, thousands of files).
-
-One-time init (already done if `.git` exists inside `aswproject_dev/`):
-
-```bash
-cd /var/www/html/staffservices/custom/aswproject_dev
-git init
-git add .
-git commit -m "Initial site"
-git branch -M main
-./push_to_github.sh
-```
 
 ---
 
@@ -58,7 +47,7 @@ git branch -M main
 
 ```bash
 php .scripts/build-static.php
-# Output in _site/ — open _site/policy-comparison.html or serve with:
+# Output in _site/ — open _site/articles.html or serve with:
 php -S 127.0.0.1:8080 -t _site
 ```
 
@@ -70,9 +59,9 @@ php -S 127.0.0.1:8080 -t _site
 2. `.github/workflows/deploy-pages.yml` runs PHP build (`.scripts/build-static.php`)
 3. Artifact `_site/` is published to GitHub Pages
 
-**Built files:** `index.html` (Facebook redirect), `policy-comparison.html`, `assets/`, `content/`, `404.html`
+**Built files:** `index.html` (Facebook redirect), articles, policy comparison, `assets/`, `content/`, `404.html`
 
-**Dev server (PHP):** `index.php` and `policy-comparison.php` remain for local/staffservices testing.
+**Dev server (PHP):** `*.php` pages remain for local/staffservices testing.
 
 ---
 
@@ -83,11 +72,12 @@ php -S 127.0.0.1:8080 -t _site
 | Key | Purpose |
 |-----|---------|
 | `facebook_page_url` | Home redirect target |
-| `site_base_url` | Canonical URLs (`https://migrantsdiary.github.io/facebook`) |
+| `site_base_url` | Canonical URLs (`https://alexmorganunfiltered.github.io/facebook`) |
 | `site_title` / `site_subtitle` | Header branding |
+| `site_logo` | Optional logo path under `assets/images/` |
 
 ---
 
 ## Custom domain (optional later)
 
-GitHub Pages → **Custom domain** in repo Settings. DNS CNAME to `migrantsdiary.github.io`.
+GitHub Pages → **Custom domain** in repo Settings. DNS CNAME to `alexmorganunfiltered.github.io`.

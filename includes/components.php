@@ -30,16 +30,23 @@ function aswproject_render_lang_switcher(): void
 function aswproject_render_site_header(string $currentPage = ''): void
 {
     $site = aswproject_load_site_config();
-    $siteTitle = trim((string) ($site['site_title'] ?? 'A Migrant\'s Diary'));
-    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'සිංහල ඔසියා'));
+    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
+    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
+    $siteLogo = trim((string) ($site['site_logo'] ?? ''));
     $homeHref = aswproject_page_href('home');
+    $brandLabel = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
     ?>
     <header class="amd-header">
       <div class="amd-header__top">
         <div class="amd-header__brand-wrap">
           <a class="amd-header__brand-link" href="<?= aswproject_escape($homeHref) ?>">
-            <span class="amd-header__brand" lang="en"><?= aswproject_escape($siteTitle) ?></span>
-            <span class="amd-header__subtitle" lang="si"><?= aswproject_escape($siteSubtitle) ?></span>
+<?php if ($siteLogo !== ''): ?>
+            <img class="amd-header__logo" src="<?= aswproject_escape($siteLogo) ?>" alt="<?= aswproject_escape($brandLabel) ?>" width="160" height="48">
+<?php endif; ?>
+            <span class="amd-header__brand"><?= aswproject_escape($siteTitle) ?></span>
+<?php if ($siteSubtitle !== ''): ?>
+            <span class="amd-header__subtitle"><?= aswproject_escape($siteSubtitle) ?></span>
+<?php endif; ?>
           </a>
         </div>
         <div class="amd-header__actions">
@@ -71,14 +78,16 @@ function aswproject_render_site_header(string $currentPage = ''): void
 function aswproject_render_site_footer(): void
 {
     $site = aswproject_load_site_config();
-    $siteTitle = trim((string) ($site['site_title'] ?? 'A Migrant\'s Diary'));
+    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
+    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
+    $siteBrand = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
     $year = date('Y');
     ?>
     <footer class="amd-footer">
       <div class="amd-footer__inner">
         <?php aswproject_render_social_links('amd-footer__social'); ?>
-        <p class="amd-footer__copy" lang="en">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteTitle) ?>. Independent editorial — not affiliated with any political party.</p>
-        <p class="amd-footer__copy" lang="si">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteTitle) ?>. ස්වාධීන editorial — කිසිදු political party එකකට affiliated නොවේ.</p>
+        <p class="amd-footer__copy" lang="en">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteBrand) ?>. Independent editorial — not affiliated with any political party.</p>
+        <p class="amd-footer__copy" lang="si">&copy; <?= aswproject_escape($year) ?> <?= aswproject_escape($siteBrand) ?>. ස්වාධීන editorial — කිසිදු political party එකකට affiliated නොවේ.</p>
       </div>
     </footer>
 <?php
@@ -271,6 +280,10 @@ function aswproject_render_news_cards(array $articles): void
     $href = aswproject_resolve_content_href($hrefKey);
     $tag = trim((string) ($article['tag'] ?? 'Article'));
     $image = trim((string) ($article['image'] ?? ''));
+    $site = aswproject_load_site_config();
+    $siteTitle = trim((string) ($site['site_title'] ?? 'Alex Morgan'));
+    $siteSubtitle = trim((string) ($site['site_subtitle'] ?? 'Unfiltered'));
+    $cardMark = trim($siteTitle . ($siteSubtitle !== '' ? ' — ' . $siteSubtitle : ''));
 ?>
       <a class="amd-news-card" href="<?= aswproject_escape($href) ?>">
 <?php if ($image !== ''): ?>
@@ -279,7 +292,7 @@ function aswproject_render_news_cards(array $articles): void
         </div>
 <?php else: ?>
         <div class="amd-news-card__media amd-news-card__media--placeholder" aria-hidden="true">
-          <span class="amd-news-card__mark">A Migrant's Diary</span>
+          <span class="amd-news-card__mark"><?= aswproject_escape($cardMark) ?></span>
         </div>
 <?php endif; ?>
         <div class="amd-news-card__body">

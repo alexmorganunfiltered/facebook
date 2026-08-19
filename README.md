@@ -1,4 +1,4 @@
-# A Migrant's Diary — web site
+# Alex Morgan — Unfiltered
 
 Standalone **public** personal site — **100% self-contained** in this directory (CSS, fonts, content).
 
@@ -6,8 +6,8 @@ Standalone **public** personal site — **100% self-contained** in this director
 
 | Environment | URL |
 |-------------|-----|
-| **GitHub Pages (production)** | https://migrantsdiary.github.io/facebook/ |
-| **GitHub repo** | https://github.com/migrantsdiary/facebook |
+| **GitHub Pages (production)** | https://alexmorganunfiltered.github.io/facebook/ |
+| **GitHub repo** | https://github.com/alexmorganunfiltered/facebook |
 | **Local PHP dev** | `/var/www/html/staffservices/custom/aswproject_dev/` |
 
 **Facebook:** [A Migrant's Diary — සිංහල ඔසියා](https://www.facebook.com/people/A-Migrants-Diary-%E0%B7%83%E0%B7%92%E0%B6%82%E0%B7%84%E0%B6%BD-%E0%B6%94%E0%B7%83%E0%B7%92%E0%B6%BA%E0%B7%8F/61574611752422/)
@@ -47,7 +47,7 @@ php .scripts/build-static.php   # local preview → _site/
 
 ## Config & content
 
-- **`site-config.json`** — Facebook URL, titles, `site_base_url` for canonical links
+- **`site-config.json`** — Facebook URL, site name, optional `site_logo`, `site_base_url`
 - **`content/policy-comparison.json`** — bilingual comparison table (do not edit casually)
 - **`content/*.json`** — page copy for home, articles, about, australia-explained
 
